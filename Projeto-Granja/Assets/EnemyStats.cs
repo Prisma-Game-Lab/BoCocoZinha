@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour
+public class EnemyStats : MonoBehaviour
 {
     public int health;
     public int attack;
     public int defense;
     public int speed;
 
-    public Text hpText;
+    public Text hpEnemyText;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        hpText.text = "Health: " + health.ToString();
+        hpEnemyText.text = "Health: " + health.ToString();
     }
 }
