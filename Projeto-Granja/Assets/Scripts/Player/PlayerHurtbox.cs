@@ -7,11 +7,15 @@ public class PlayerHurtbox : MonoBehaviour
     public BoxCollider2D hurtbox;
     public PlayerStats stats;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyAttack"))
         {
-            stats.health--;
+            if (stats.invincible == false)
+            {
+                stats.health--;
+                stats.invincible = true;
+            }
         }
     }
 }
