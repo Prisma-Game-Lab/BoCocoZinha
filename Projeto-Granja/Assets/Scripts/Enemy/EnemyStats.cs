@@ -11,6 +11,9 @@ public class EnemyStats : MonoBehaviour
     public int speed;
 
     public Text hpEnemyText;
+
+    [Header("DROPS E ITENS")]
+    public GameObject[] itensDropados;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +24,17 @@ public class EnemyStats : MonoBehaviour
     void Update()
     {
         hpEnemyText.text = "Health: " + health.ToString();
+
+        if (health <= 0)
+        {
+            DropItem();
+            Destroy(gameObject);
+        }
+    }
+
+    void DropItem()
+    {
+        GameObject item = Instantiate(itensDropados[0], gameObject.transform.position, Quaternion.identity);
+
     }
 }
