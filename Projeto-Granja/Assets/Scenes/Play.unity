@@ -407,7 +407,7 @@ MonoBehaviour:
   defense: 3
   speed: 3
   invincible: 0
-  invincibilityDuration: 0
+  invincibilityDuration: 3
   hpText: {fileID: 1310592266}
 --- !u!114 &321676704
 MonoBehaviour:

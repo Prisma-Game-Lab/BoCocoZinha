@@ -26,8 +26,8 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         hpText.text = "Health: " + health.ToString();
-        
 
+        UpdateInvincible();
     }
 
     private void UpdateInvincible()
@@ -35,6 +35,17 @@ public class PlayerStats : MonoBehaviour
         if (invincible && invincibleTimer == -1)
         {
             invincibleTimer = invincibilityDuration;
+            Debug.Log("Inicio invencivel");
+        }
+        else if (invincible && invincibleTimer > 0)
+        {
+            invincibleTimer -= Time.deltaTime;
+        }
+        else if (invincibleTimer <= 0 && invincibleTimer != -1)
+        {
+            invincibleTimer = -1;
+            invincible = false;
+            Debug.Log("Fim invencivel");
         }
     }
 }
