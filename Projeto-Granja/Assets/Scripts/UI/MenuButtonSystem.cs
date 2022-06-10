@@ -11,7 +11,7 @@ public class MenuButtonSystem : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene("Playtest Scene");
     }
 
     public void OpenSettings()
@@ -36,5 +36,10 @@ public class MenuButtonSystem : MonoBehaviour
     {
         creditsMenu.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
