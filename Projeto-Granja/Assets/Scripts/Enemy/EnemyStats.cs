@@ -10,20 +10,20 @@ public class EnemyStats : MonoBehaviour
     public int defense;
     public int speed;
 
-    public Text hpEnemyText;
+    //public Text hpEnemyText;
 
     [Header("DROPS E ITENS")]
     public GameObject[] itensDropados;
     // Start is called before the first frame update
     void Start()
     {
-
+        //hpEnemyText = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        hpEnemyText.text = "Health: " + health.ToString();
+        //hpEnemyText.text = "Enemy Health: " + health.ToString();
 
         if (health <= 0)
         {

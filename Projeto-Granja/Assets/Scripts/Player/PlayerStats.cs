@@ -20,12 +20,13 @@ public class PlayerStats : MonoBehaviour
     {
         invincible = false;
         invincibleTimer = -1;
+        hpText = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        hpText.text = "Health: " + health.ToString();
+        hpText.text = "Player Health: " + health.ToString();
 
         UpdateInvincible();
     }
