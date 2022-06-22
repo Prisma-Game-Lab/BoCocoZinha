@@ -14,10 +14,13 @@ public class PlayerStats : MonoBehaviour
 
     public Text hpText;
 
+    public GameObject DeathPanel;
+
     private float invincibleTimer;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         invincible = false;
         invincibleTimer = -1;
         hpText = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Text>();
@@ -26,9 +29,8 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hpText.text = "Player Health: " + health.ToString();
-
         UpdateInvincible();
+        CheckHealth();
     }
 
     private void UpdateInvincible()
@@ -47,6 +49,19 @@ public class PlayerStats : MonoBehaviour
             invincibleTimer = -1;
             invincible = false;
             Debug.Log("Fim invencivel");
+        }
+    }
+
+    private void CheckHealth()
+    {
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+            DeathPanel.SetActive(true);
+            Time.timeScale = 0;
+        } else
+        {
+            hpText.text = "Player Health: " + health.ToString();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private bool attacking;
+    [HideInInspector]public bool attacking;
     private Rigidbody2D rb;
 
     private float moveTimer;
@@ -55,7 +55,6 @@ public class EnemyMovement : MonoBehaviour
 
                 CalculateVector();
 
-                Debug.Log("New Direction " + newDirection.ToString());
                 moveTimer += Time.deltaTime;
                 rb.MovePosition(rb.position + movVector * stats.speed * Time.fixedDeltaTime);
             }
