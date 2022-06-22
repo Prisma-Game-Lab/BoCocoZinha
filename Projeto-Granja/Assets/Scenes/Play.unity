@@ -439,7 +439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9195488142f437246924e895785a09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 10
+  dashCooldownTimer: 0.5
+  dashDuration: 0.2
+  dashSpeed: 25
 --- !u!114 &321676702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +487,7 @@ MonoBehaviour:
   health: 1
   attack: 3
   defense: 3
-  speed: 3
+  speed: 11
   invincible: 0
   invincibilityDuration: 3
   hpText: {fileID: 1310592266}

@@ -9,13 +9,26 @@ public class PlayerMovement : MonoBehaviour
     private float movX;
     private float movY;
     private Vector2 movVector;
-    public int MoveSpeed = 10;
+    private int moveSpeed;
+
+    [Header("Atributos Dash")]
+    public float dashCooldownTimer;
+    private float currentDashCooldownTimer;
+    public float dashDuration;
+    private float currentDashDuration;
+    public int dashSpeed;
+    private bool isDashing;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+
+        moveSpeed = GetComponent<PlayerStats>().speed;
+
+        currentDashCooldownTimer = 0;
+        isDashing = false;
     }
 
     void OnMove(InputValue mov)
@@ -33,8 +46,40 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnDash()
+    {
+        
+        if (currentDashCooldownTimer <= 0 && !isDashing)
+        {
+            Debug.Log(movVector.x);
+            currentDashDuration = dashDuration;
+            currentDashCooldownTimer = dashCooldownTimer;
+            isDashing = true;
+        }
+    }
+
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movVector * MoveSpeed * Time.fixedDeltaTime);
+
+        if (currentDashCooldownTimer > 0)
+        {
+            currentDashCooldownTimer -= Time.deltaTime;
+        }
+
+        if (isDashing)
+        {
+            if (currentDashDuration > 0)
+            {
+                rb.MovePosition(rb.position + movVector * dashSpeed * Time.fixedDeltaTime);
+                currentDashDuration -= Time.deltaTime;
+            } else
+            {
+                isDashing = false;
+            }
+
+        } else
+        {
+            rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 }
