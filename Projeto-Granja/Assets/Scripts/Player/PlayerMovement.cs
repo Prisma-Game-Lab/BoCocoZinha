@@ -23,6 +23,14 @@ public class PlayerMovement : MonoBehaviour
         movVector = mov.Get<Vector2>();
         movX = movVector.x;
         movY = movVector.y;
+
+        if (movX < 0)
+        {
+            this.gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+        } else if (movX > 0)
+        {
+            this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
     }
 
     private void FixedUpdate()

@@ -17,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
 
     public EnemyStats stats;
 
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,41 +33,49 @@ public class EnemyMovement : MonoBehaviour
         moved[1] = 0; //down
         moved[2] = 0; //left
         moved[3] = 0; //right
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     { 
-        if (attacking == false)
-        {
-            if (moveTimer >= 1)
-            {
-                moveTimer = 0;
-                lastDirection = newDirection;
-
-            }
-            else if (moveTimer == 0)
-            {
-                //Escolhe uma direcao aleatoria
-                newDirection = Random.Range(0, 4);
-                while ((newDirection == lastDirection) || (moved[newDirection] == movLimit))
-                {
-                    newDirection = Random.Range(0, 4);
-                }
-
-                CalculateVector();
-
-                moveTimer += Time.deltaTime;
-                rb.MovePosition(rb.position + movVector * stats.speed * Time.fixedDeltaTime);
-            }
-            else
-            {
-                moveTimer += Time.deltaTime;
-                rb.MovePosition(rb.position + movVector * stats.speed * Time.fixedDeltaTime);
-            }
+        if (attacking) {
+            ChasePlayer();
+        } else {
+            PatrolMovement();
         }
     }
 
+
+    void PatrolMovement()
+    {
+        if (moveTimer >= 1)
+        {
+            moveTimer = 0;
+            lastDirection = newDirection;
+
+        }
+        else if (moveTimer == 0)
+        {
+            //Escolhe uma direcao aleatoria
+            newDirection = Random.Range(0, 4);
+            while ((newDirection == lastDirection) || (moved[newDirection] == movLimit))
+            {
+                newDirection = Random.Range(0, 4);
+            }
+
+            CalculateVector();
+
+            moveTimer += Time.deltaTime;
+            rb.MovePosition(rb.position + movVector * stats.speed * Time.fixedDeltaTime);
+        }
+        else
+        {
+            moveTimer += Time.deltaTime;
+            rb.MovePosition(rb.position + movVector * stats.speed * Time.fixedDeltaTime);
+        }
+    }
 
     void CalculateVector()
     {
@@ -99,5 +109,20 @@ public class EnemyMovement : MonoBehaviour
                 moved[2]--;
                 break;
         }
+    }
+
+    void ChasePlayer()
+    {
+        float distanceToPlayer = Vector2.Distance(player.transform.position, this.transform.position);
+
+        if (distanceToPlayer < 3)
+        {
+            movVector = new Vector2(0.0f, 0.0f);
+        } else
+        {
+            movVector = player.transform.position - this.transform.position;
+        }
+        
+        rb.MovePosition(rb.position + movVector * stats.speed/1.5f * Time.fixedDeltaTime);
     }
 }

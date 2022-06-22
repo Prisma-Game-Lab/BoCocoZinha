@@ -8,7 +8,7 @@ public class EnemySight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movement = gameObject.GetComponentInParent<EnemyMovement>();
+        movement = gameObject.GetComponent<EnemyMovement>();
     }
 
     // Update is called once per frame
@@ -22,7 +22,14 @@ public class EnemySight : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             movement.attacking = true;
-            Debug.Log("visao");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            movement.attacking = false;
         }
     }
 }
