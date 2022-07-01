@@ -11,7 +11,6 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<CinemachineVirtualCamera>();
-
     }
 
     // Update is called once per frame

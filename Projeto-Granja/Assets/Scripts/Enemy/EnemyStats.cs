@@ -32,6 +32,11 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+       health -= damage;
+    }
+
     void DropItem()
     {
         GameObject item = Instantiate(itensDropados[0], gameObject.transform.position, Quaternion.identity);
