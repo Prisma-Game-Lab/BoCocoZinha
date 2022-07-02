@@ -14,36 +14,59 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayer;
 
-    private bool canAttack;
+    private bool canNormalAttack;
+    private bool canChargedAttack; 
 
     private void Start() 
     {
-        canAttack = true;
+        canNormalAttack = true;
+        canChargedAttack = true;
     }
 
     public void OnNormalAttack() 
     {
-        Attack(normalDamage, normalCooldown);
+        if(canNormalAttack)
+        {
+            Attack(normalDamage, normalCooldown); 
+            StartCoroutine(NormalCooldown(normalCooldown));
+        }
     }
 
     public void OnChargedAttack() 
     {
-        Attack(chargedDamage, chargedCooldown);
+        if(canChargedAttack)
+        {
+            Attack(chargedDamage, chargedCooldown);
+            StartCoroutine(ChargedCooldown(chargedCooldown));
+        }
     }
 
     private void Attack(int damage, float cooldown)
     {
-        if(canAttack)
-        {
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
 
-            foreach (Collider2D enemy in hitEnemies)
-            {    
-                enemy.GetComponent<EnemyStats>().TakeDamage(damage);
-            }
-
-            StartCoroutine(Cooldown(cooldown));
+        foreach (Collider2D enemy in hitEnemies)
+        {    
+            enemy.GetComponent<EnemyStats>().TakeDamage(damage);
         }
+    }
+
+    private IEnumerator NormalCooldown(float cooldown)
+    {
+        canNormalAttack = false;
+
+        yield return new WaitForSeconds(cooldown); 
+
+        canNormalAttack = true;
+    }
+
+    private IEnumerator ChargedCooldown(float cooldown)
+    {
+        canChargedAttack = false;
+
+        yield return new WaitForSeconds(cooldown); 
+
+        canChargedAttack = true;
     }
 
     private void OnDrawGizmosSelected() 
@@ -56,12 +79,4 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, range);
     }
 
-    private IEnumerator Cooldown(float cooldown)
-    {
-        canAttack = false;
-
-        yield return new WaitForSeconds(cooldown); 
-
-        canAttack = true;
-    }
 }
