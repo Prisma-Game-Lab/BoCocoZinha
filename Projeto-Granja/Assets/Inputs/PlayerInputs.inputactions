@@ -327,6 +327,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8567c417-68ea-43f5-97ea-190a9c94c45e",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ac0a1372-c69c-41b5-a141-1b91c6eb5b5f",
                     "path": "<Keyboard>/#(J)",
                     "interactions": "",
@@ -338,11 +349,33 @@
                 },
                 {
                     "name": "",
+                    "id": "b5822d3b-7cae-4f98-b98f-acaffd274baa",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NormalAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2041d972-e98f-48bb-88cb-aed2d18efcb6",
                     "path": "<Keyboard>/#(K)",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "ChargedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af750fd4-d312-4ba3-add5-f1bdd40866b6",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "ChargedAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
