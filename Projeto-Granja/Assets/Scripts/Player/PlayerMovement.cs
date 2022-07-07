@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float movY;
     private Vector2 movVector;
     private int moveSpeed;
+    private Animator animator;
 
     [Header("Atributos Dash")]
     public float dashCooldownTimer;
@@ -22,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
 
@@ -39,10 +42,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (movX < 0)
         {
+            animator.SetTrigger("Side");
             this.gameObject.transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
-        } else if (movX > 0)
+        } 
+        else if (movX > 0)
         {
             this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            animator.SetTrigger("Side");
+        }
+
+        if(movY < 0)
+        {
+            animator.SetTrigger("Down");
+        }
+        else if(movY > 0)
+        {
+            animator.SetTrigger("Up");
+        }
+
+        if(movX == 0 && movY == 0)
+        {
+            animator.SetTrigger("Idle");
         }
     }
 
