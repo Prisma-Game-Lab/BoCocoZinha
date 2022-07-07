@@ -18,11 +18,13 @@ public class EnemyMovement : MonoBehaviour
     public EnemyStats stats;
 
     private GameObject player;
+    public bool knockback;
 
     // Start is called before the first frame update
     void Start()
     {
         attacking = false;
+        knockback = false;
 
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
@@ -40,10 +42,13 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if (attacking) {
-            ChasePlayer();
-        } else {
-            PatrolMovement();
+        if(!knockback)
+        {
+            if (attacking) {
+                ChasePlayer();
+            } else {
+                PatrolMovement();
+            }
         }
     }
 

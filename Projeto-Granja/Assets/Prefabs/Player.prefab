@@ -232,10 +232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalCooldown: 2
-  normalDamage: 5
+  normalDamage: 2
   chargedCooldown: 5
   chargedDamage: 10
   range: 0.5
+  knockBackTime: 0.25
+  knockBackDistance: 10
   attackPoint: {fileID: 2735921499390141732}
   enemyLayer:
     serializedVersion: 2

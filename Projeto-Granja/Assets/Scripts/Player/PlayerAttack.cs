@@ -11,6 +11,9 @@ public class PlayerAttack : MonoBehaviour
     public int chargedDamage;
     public float range;
 
+    public float knockBackTime;
+    public float knockBackDistance;
+
     public Transform attackPoint;
     public LayerMask enemyLayer;
 
@@ -50,6 +53,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {    
+            StartCoroutine(KnockBack(enemy.gameObject));
             enemy.GetComponent<EnemyStats>().TakeDamage(damage);
         }
     }
@@ -70,6 +74,24 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(cooldown); 
 
         canChargedAttack = true;
+    }
+
+    private IEnumerator KnockBack(GameObject enemy)
+    {
+        Rigidbody2D enemy_rb = enemy.GetComponent<Rigidbody2D>();
+        if(enemy_rb != null)
+        {
+            enemy.GetComponent<EnemyMovement>().knockback = true;
+            enemy_rb.isKinematic = false;
+            Vector2 diff = enemy_rb.transform.position - transform.position;
+            diff = diff.normalized * knockBackDistance;
+            enemy_rb.AddForce(diff, ForceMode2D.Impulse);
+
+            yield return new WaitForSeconds(knockBackTime);
+            enemy_rb.velocity = Vector2.zero;
+            enemy_rb.isKinematic = true;
+            enemy.GetComponent<EnemyMovement>().knockback = false;
+        }
     }
 
     private void OnDrawGizmosSelected() 
