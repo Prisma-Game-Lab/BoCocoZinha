@@ -15,12 +15,14 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
 
     private bool canNormalAttack;
-    private bool canChargedAttack; 
+    private bool canChargedAttack;
+    private Animator animator; 
 
     private void Start() 
     {
         canNormalAttack = true;
         canChargedAttack = true;
+        animator = GetComponent<Animator>();
     }
 
     public void OnNormalAttack() 
@@ -43,6 +45,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack(int damage, float cooldown)
     {
+        animator.SetTrigger("Attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies)
