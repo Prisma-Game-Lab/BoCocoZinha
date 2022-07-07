@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (currentDashCooldownTimer <= 0 && !isDashing)
         {
+            animator.SetTrigger("Dash");
             Debug.Log(movVector.x);
             currentDashDuration = dashDuration;
             currentDashCooldownTimer = dashCooldownTimer;
@@ -92,12 +93,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.MovePosition(rb.position + movVector * dashSpeed * Time.fixedDeltaTime);
                 currentDashDuration -= Time.deltaTime;
-            } else
+            } 
+            else
             {
                 isDashing = false;
+                animator.SetTrigger("DashEnd");
             }
 
-        } else
+        } 
+        else
         {
             rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
         }
