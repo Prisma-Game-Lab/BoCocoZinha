@@ -37,13 +37,13 @@ public class PlayerMovement : MonoBehaviour
         movX = movVector.x;
         movY = movVector.y;
 
-        /*if (movX < 0)
+        if (movX < 0)
         {
-            this.gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+            this.gameObject.transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
         } else if (movX > 0)
         {
-            this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        }*/
+            this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        }
     }
 
     void OnDash()
