@@ -1254,6 +1254,51 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
+  - name: player_hit
+    clip: {fileID: 8300000, guid: 0f5026d17fa699946ad3e5d73b078219, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: player_dead
+    clip: {fileID: 8300000, guid: 0799e69e296f3544dad3352413216061, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: miss_hit
+    clip: {fileID: 8300000, guid: 145393c3cef1feb46a672e6ded5dd6ed, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: enemy_hit
+    clip: {fileID: 8300000, guid: 3f70acd22b113ee4bbdab27a56be1e1f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: enemy_dead
+    clip: {fileID: 8300000, guid: 5a593074fbf05854dae27d565fb252e3, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
 --- !u!4 &1130474610
 Transform:
   m_ObjectHideFlags: 0

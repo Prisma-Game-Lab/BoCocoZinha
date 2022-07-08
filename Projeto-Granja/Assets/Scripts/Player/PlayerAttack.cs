@@ -19,19 +19,22 @@ public class PlayerAttack : MonoBehaviour
 
     private bool canNormalAttack;
     private bool canChargedAttack;
-    private Animator animator; 
+    private Animator animator;
+    private AudioManager audioManager;
 
     private void Start() 
     {
         canNormalAttack = true;
         canChargedAttack = true;
         animator = GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
     }
 
     public void OnNormalAttack() 
     {
         if(canNormalAttack)
         {
+            audioManager.Play("miss_hit");
             Attack(normalDamage, normalCooldown); 
             StartCoroutine(NormalCooldown(normalCooldown));
         }

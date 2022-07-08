@@ -17,6 +17,9 @@ public class PlayerStats : MonoBehaviour
     public GameObject DeathPanel;
 
     private float invincibleTimer;
+
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class PlayerStats : MonoBehaviour
         invincible = false;
         invincibleTimer = -1;
         hpText = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Text>();
+        audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -56,6 +60,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (health <= 0)
         {
+            audioManager.Play("player_dead");
             Destroy(this.gameObject);
             DeathPanel.SetActive(true);
             Time.timeScale = 0;
