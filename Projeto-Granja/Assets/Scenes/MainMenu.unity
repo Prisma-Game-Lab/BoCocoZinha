@@ -1283,7 +1283,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_hit
     clip: {fileID: 8300000, guid: 3f70acd22b113ee4bbdab27a56be1e1f, type: 3}
-    volume: 1
+    volume: 0.45
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0

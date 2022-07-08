@@ -17,6 +17,7 @@ public class EnemyHurtbox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerAttack"))
         {
+            print("tomou");
             audioManager.Play("enemy_hit");
             stats.health--;
         }

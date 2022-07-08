@@ -14,10 +14,13 @@ public class EnemyStats : MonoBehaviour
 
     [Header("DROPS E ITENS")]
     public GameObject[] itensDropados;
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         //hpEnemyText = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<Text>();
+        audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -27,6 +30,7 @@ public class EnemyStats : MonoBehaviour
 
         if (health <= 0)
         {
+            audioManager.Play("enemy_dead");
             DropItem();
             Destroy(gameObject);
         }
@@ -34,7 +38,8 @@ public class EnemyStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-       health -= damage;
+        audioManager.Play("enemy_hit");
+        health -= damage;
     }
 
     void DropItem()
