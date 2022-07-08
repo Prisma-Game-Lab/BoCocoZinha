@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 4420858422451873807}
   - component: {fileID: 779945373790396378}
   m_Layer: 0
-  m_Name: C
+  m_Name: C. Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,12 +946,8 @@ MonoBehaviour:
   ManualDoorModeData:
     DoorsList:
     - From: {x: -4, y: 0, z: 0}
-      To: {x: -4, y: 0, z: 0}
-    - From: {x: -3, y: 0, z: 0}
       To: {x: -3, y: 0, z: 0}
     - From: {x: -4, y: -2, z: 0}
-      To: {x: -4, y: -2, z: 0}
-    - From: {x: -3, y: -2, z: 0}
       To: {x: -3, y: -2, z: 0}
   SimpleDoorModeData:
     DistanceFromCorners: 1

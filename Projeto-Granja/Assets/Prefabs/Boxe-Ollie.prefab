@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5011070610592977915}
   - component: {fileID: 1859986384433715524}
   - component: {fileID: 6650769901132142358}
+  - component: {fileID: -5571243975436786112}
   m_Layer: 3
   m_Name: Boxe-Ollie
   m_TagString: Enemy
@@ -103,7 +104,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.2512905, y: -0.92784226}
   serializedVersion: 2
-  m_Radius: 1.6791328
+  m_Radius: 2.47
 --- !u!50 &5011070610592977915
 Rigidbody2D:
   serializedVersion: 4
@@ -158,3 +159,16 @@ MonoBehaviour:
   attacking: 0
   movLimit: 1
   stats: {fileID: 1859986384433715524}
+  knockback: 0
+--- !u!114 &-5571243975436786112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838281694477377664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a8366b5fd1eb0c4b96d2cb0a7f42b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

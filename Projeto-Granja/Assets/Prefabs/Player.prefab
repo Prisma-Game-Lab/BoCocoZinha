@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9195488142f437246924e895785a09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashCooldownTimer: 2
-  dashDuration: 2
+  dashCooldownTimer: 1.5
+  dashDuration: 0.2
   dashSpeed: 20
 --- !u!114 &1681532272632069357
 MonoBehaviour:
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf06e3ef5ce5e941a5686b3f9f344c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalCooldown: 2
+  normalCooldown: 0.3
   normalDamage: 2
   chargedCooldown: 5
   chargedDamage: 10

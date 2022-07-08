@@ -189,14 +189,10 @@ MonoBehaviour:
     DoorLines: []
   ManualDoorModeData:
     DoorsList:
-    - From: {x: -7, y: -1, z: 0}
-      To: {x: -7, y: -1, z: 0}
-    - From: {x: -7, y: -2, z: 0}
-      To: {x: -7, y: -2, z: 0}
     - From: {x: -5, y: -1, z: 0}
-      To: {x: -5, y: -1, z: 0}
-    - From: {x: -5, y: -2, z: 0}
       To: {x: -5, y: -2, z: 0}
+    - From: {x: -7, y: -1, z: 0}
+      To: {x: -7, y: -2, z: 0}
   SimpleDoorModeData:
     DistanceFromCorners: 1
     DoorLength: 1
