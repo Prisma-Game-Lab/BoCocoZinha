@@ -1247,7 +1247,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: button_out
     clip: {fileID: 8300000, guid: e631d05b35a05fe499dccd49a2f764c2, type: 3}
-    volume: 1
+    volume: 0.55
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
