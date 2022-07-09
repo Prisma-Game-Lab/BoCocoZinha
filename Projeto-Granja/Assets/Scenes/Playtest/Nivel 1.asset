@@ -62,10 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 320, y: 240}
+  Position: {x: 320.72253, y: 240}
   Name: Spawn
   IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: 29566de391621c5468b713229c6d368b, type: 3}
+  - {fileID: 4898221168641879181, guid: bce5ec154e638174ca459882c9c3ac18, type: 3}
   RoomTemplateSets: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -96,7 +96,7 @@ MonoBehaviour:
   - {fileID: -1697326654786517729}
   - {fileID: -6900374223878441991}
   EditorData:
-    PanOffset: {x: -7.850868, y: 34.899593}
+    PanOffset: {x: -56.25966, y: 37.06715}
     Zoom: 1.3840461
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
