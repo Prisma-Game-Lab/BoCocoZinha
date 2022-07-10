@@ -183,8 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashCooldownTimer: 1.5
-  dashDuration: 0.2
-  dashSpeed: 20
+  dashingSpeed: 20
+  dashingDuration: 0.2
+  isDashing: 0
 --- !u!114 &1681532272632069357
 MonoBehaviour:
   m_ObjectHideFlags: 0

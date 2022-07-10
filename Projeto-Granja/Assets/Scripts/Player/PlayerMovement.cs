@@ -14,11 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Atributos Dash")]
     public float dashCooldownTimer;
-    private float currentDashCooldownTimer;
-    public float dashDuration;
-    private float currentDashDuration;
-    public int dashSpeed;
-    private bool isDashing;
+    public float dashingSpeed;
+    public float dashingDuration;
+    public bool isDashing;
+    private bool canDash;
+    private Vector2 dashingDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -30,78 +30,78 @@ public class PlayerMovement : MonoBehaviour
 
         moveSpeed = GetComponent<PlayerStats>().speed;
 
-        currentDashCooldownTimer = 0;
         isDashing = false;
+        canDash = true;
     }
 
     void OnMove(InputValue mov)
     {
-        movVector = mov.Get<Vector2>();
-        movX = movVector.x;
-        movY = movVector.y;
+        if(!isDashing)
+        {
+            movVector = mov.Get<Vector2>();
+            movX = movVector.x;
+            movY = movVector.y;
 
-        if (movX < 0)
-        {
-            animator.SetTrigger("Side");
-            this.gameObject.transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
-        } 
-        else if (movX > 0)
-        {
-            this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-            animator.SetTrigger("Side");
-        }
+            if (movX < 0)
+            {
+                animator.SetTrigger("Side");
+                this.gameObject.transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
+            } 
+            else if (movX > 0)
+            {
+                this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                animator.SetTrigger("Side");
+            }
 
-        if(movY < 0)
-        {
-            animator.SetTrigger("Down");
-        }
-        else if(movY > 0)
-        {
-            animator.SetTrigger("Up");
-        }
+            if(movY < 0)
+            {
+                animator.SetTrigger("Down");
+            }
+            else if(movY > 0)
+            {
+                animator.SetTrigger("Up");
+            }
 
-        if(movX == 0 && movY == 0)
-        {
-            animator.SetTrigger("Idle");
+            if(movX == 0 && movY == 0)
+            {
+                animator.SetTrigger("Idle");
+            }
         }
     }
 
     void OnDash()
-    {
-        
-        if (currentDashCooldownTimer <= 0 && !isDashing)
+    {  
+        if (!isDashing && canDash)
         {
-            animator.SetTrigger("Dash");
-            Debug.Log(movVector.x);
-            currentDashDuration = dashDuration;
-            currentDashCooldownTimer = dashCooldownTimer;
-            isDashing = true;
+            //nimator.SetTrigger("Dash");
+            StartCoroutine(Dash());
         }
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        dashingDirection = new Vector2(movX, movY);
+        if(dashingDirection == Vector2.zero)
+        {
+            dashingDirection = new Vector2(transform.localScale.x, 0);
+        }
+
+        rb.velocity = dashingDirection.normalized * dashingSpeed;
+
+        yield return new WaitForSeconds(dashingDuration);
+
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldownTimer);
+
+        canDash = true;
     }
 
     private void FixedUpdate()
     {
-
-        if (currentDashCooldownTimer > 0)
-        {
-            currentDashCooldownTimer -= Time.deltaTime;
-        }
-
-        if (isDashing)
-        {
-            if (currentDashDuration > 0)
-            {
-                rb.MovePosition(rb.position + movVector * dashSpeed * Time.fixedDeltaTime);
-                currentDashDuration -= Time.deltaTime;
-            } 
-            else
-            {
-                isDashing = false;
-                animator.SetTrigger("DashEnd");
-            }
-
-        } 
-        else
+        if(!isDashing)
         {
             rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
         }
