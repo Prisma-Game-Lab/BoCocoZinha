@@ -243,6 +243,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
+  attackTime: 0.3
+  isAttacking: 0
 --- !u!95 &468043138844800554
 Animator:
   serializedVersion: 4

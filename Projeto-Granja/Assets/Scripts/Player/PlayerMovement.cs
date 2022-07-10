@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movVector;
     private int moveSpeed;
     private Animator animator;
+    private PlayerAttack playerAttack;
 
     [Header("Atributos Dash")]
     public float dashCooldownTimer;
@@ -23,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerAttack = GetComponent<PlayerAttack>();
+
         animator = GetComponent<Animator>();
 
         rb = GetComponent<Rigidbody2D>();
@@ -101,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!isDashing)
+        if(!isDashing && !playerAttack.isAttacking)
         {
             rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
         }

@@ -22,6 +22,9 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
     private AudioManager audioManager;
 
+    public float attackTime;
+    public bool isAttacking;
+
     private void Start() 
     {
         canNormalAttack = true;
@@ -53,12 +56,22 @@ public class PlayerAttack : MonoBehaviour
     {
         animator.SetTrigger("Attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
+        StartCoroutine(MovementStop());
 
         foreach (Collider2D enemy in hitEnemies)
         {    
             StartCoroutine(KnockBack(enemy.gameObject));
             enemy.GetComponent<EnemyStats>().TakeDamage(damage);
         }
+    }
+
+    private IEnumerator MovementStop()
+    {
+        isAttacking = true;
+
+        yield return new WaitForSeconds(attackTime); 
+
+        isAttacking = false;
     }
 
     private IEnumerator NormalCooldown(float cooldown)
