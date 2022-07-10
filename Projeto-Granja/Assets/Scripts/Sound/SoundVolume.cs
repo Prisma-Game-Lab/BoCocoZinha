@@ -21,7 +21,7 @@ public class SoundVolume : MonoBehaviour
         {
             PlayerPrefs.SetFloat("musicVol", 0.5f);
             musicVolume.value = PlayerPrefs.GetFloat("musicVol");
-            mixer.SetFloat("musicVol", Mathf.Log10(0.9999f - musicVolume.value) * 25);
+            mixer.SetFloat("musicVol", Mathf.Log10(musicVolume.value + 0.001f) * 25);
         }
 
         if (PlayerPrefs.HasKey("overallVol"))
@@ -32,7 +32,7 @@ public class SoundVolume : MonoBehaviour
         {
             PlayerPrefs.SetFloat("overallVol", 0.5f);
             overallVolume.value = PlayerPrefs.GetFloat("overallVol");
-            mixer.SetFloat("overallVol", Mathf.Log10(0.9999f - overallVolume.value) * 25);
+            mixer.SetFloat("overallVol", Mathf.Log10(overallVolume.value + 0.001f) * 25);
         }
 
         if (PlayerPrefs.HasKey("sfxVol"))
@@ -43,26 +43,26 @@ public class SoundVolume : MonoBehaviour
         {
             PlayerPrefs.SetFloat("sfxVol", 0.5f);
             sfxVolume.value = PlayerPrefs.GetFloat("sfxVol");
-            mixer.SetFloat("sfxVol", Mathf.Log10(0.9999f - sfxVolume.value) * 25);
+            mixer.SetFloat("sfxVol", Mathf.Log10(sfxVolume.value+0.001f) * 25);
         }
     }
 
     public void SetMusictrackVolume()
     {
         PlayerPrefs.SetFloat("musicVol", musicVolume.value);
-        mixer.SetFloat("musicVol", Mathf.Log10(0.9999f - musicVolume.value) * 25);
+        mixer.SetFloat("musicVol", Mathf.Log10(musicVolume.value + 0.001f) * 25);
     }
     
     public void SetoveralltrackVolume()
     {
         PlayerPrefs.SetFloat("overallVol", overallVolume.value);
-        mixer.SetFloat("overallVol", Mathf.Log10(0.9999f - overallVolume.value) * 25);
+        mixer.SetFloat("overallVol", Mathf.Log10(overallVolume.value + 0.001f) * 25);
     }
 
     public void SetsfxtrackVolume()
     {
         PlayerPrefs.SetFloat("sfxVol", sfxVolume.value);
-        mixer.SetFloat("sfxVol", Mathf.Log10(0.9999f - sfxVolume.value) * 25);
+        mixer.SetFloat("sfxVol", Mathf.Log10(sfxVolume.value+0.001f) * 25);
     }
 
 }
