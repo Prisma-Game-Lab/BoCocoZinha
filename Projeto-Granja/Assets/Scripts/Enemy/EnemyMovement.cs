@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [HideInInspector]public bool attacking;
+    [HideInInspector]public bool isAttacking;
+
     private Rigidbody2D rb;
 
     private float moveTimer;
@@ -17,8 +19,9 @@ public class EnemyMovement : MonoBehaviour
 
     public EnemyStats stats;
 
-    private GameObject player;
+    [SerializeField] private GameObject player;
     public bool knockback;
+    public float followTreshold;
 
     // Start is called before the first frame update
     void Start()
@@ -36,17 +39,24 @@ public class EnemyMovement : MonoBehaviour
         moved[2] = 0; //left
         moved[3] = 0; //right
 
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
         if(!knockback)
         {
-            if (attacking) {
+            if (attacking && player != null) 
+            {
                 ChasePlayer();
-            } else {
+            } 
+            else 
+            {
                 PatrolMovement();
             }
         }
@@ -120,10 +130,12 @@ public class EnemyMovement : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(player.transform.position, this.transform.position);
 
-        if (distanceToPlayer < 3)
+        if (distanceToPlayer < followTreshold)
         {
             movVector = new Vector2(0.0f, 0.0f);
-        } else
+            StartCoroutine(GetComponent<EnemyAttack>().Attack(stats.attack, player.transform));
+        } 
+        else
         {
             movVector = player.transform.position - this.transform.position;
         }

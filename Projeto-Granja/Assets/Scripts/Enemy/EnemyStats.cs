@@ -28,18 +28,19 @@ public class EnemyStats : MonoBehaviour
     {
         //hpEnemyText.text = "Enemy Health: " + health.ToString();
 
-        if (health <= 0)
-        {
-            audioManager.Play("enemy_dead");
-            DropItem();
-            Destroy(gameObject);
-        }
     }
 
     public void TakeDamage(int damage)
     {
         audioManager.Play("enemy_hit");
         health -= damage;
+
+        if (health <= 0)
+        {
+            audioManager.Play("enemy_dead");
+            DropItem();
+            Destroy(gameObject);
+        }
     }
 
     void DropItem()

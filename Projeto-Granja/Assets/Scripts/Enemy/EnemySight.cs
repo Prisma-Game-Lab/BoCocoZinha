@@ -8,7 +8,7 @@ public class EnemySight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movement = gameObject.GetComponent<EnemyMovement>();
+        movement = gameObject.transform.parent.gameObject.GetComponent<EnemyMovement>();
     }
 
     // Update is called once per frame
