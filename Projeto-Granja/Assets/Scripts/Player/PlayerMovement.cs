@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
             movVector = mov.Get<Vector2>();
             movX = movVector.x;
             movY = movVector.y;
-
             if (movX < 0)
             {
                 animator.SetTrigger("Side");
@@ -64,9 +63,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetTrigger("Up");
             }
-
-            if(movX == 0 && movY == 0)
+            
+            if (movX == 0 && movY == 0)
             {
+                animator.ResetTrigger("Up");
+                animator.ResetTrigger("Side");
+                animator.ResetTrigger("Down");
                 animator.SetTrigger("Idle");
             }
         }
