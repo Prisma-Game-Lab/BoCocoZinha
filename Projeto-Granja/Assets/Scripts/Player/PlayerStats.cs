@@ -20,6 +20,8 @@ public class PlayerStats : MonoBehaviour
 
     private AudioManager audioManager;
 
+    public bool inCyclone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +66,8 @@ public class PlayerStats : MonoBehaviour
             Destroy(this.gameObject);
             DeathPanel.SetActive(true);
             Time.timeScale = 0;
-        } else
+        } 
+        else
         {
             hpText.text = "Player Health: " + health.ToString();
         }
