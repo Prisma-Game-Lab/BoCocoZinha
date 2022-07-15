@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 319.71014, y: 72.02656}
+  Position: {x: 320, y: 80}
   Name: Room 3 ini. (3)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: a35289ece8cce4d48a54cc689c8d4602, type: 3}
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 322.5458, y: -123.01033}
+  Position: {x: 320, y: -80}
   Name: Room Portal
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: e62a5b45ea97db04e911a8dbb52dc4d6, type: 3}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 320.6324, y: -19.631525}
+  Position: {x: 320, y: 0}
   Name: Room 2 ini. (3)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: d2ffab8c959bfdd469d09e00577a05b6, type: 3}
@@ -201,8 +201,8 @@ MonoBehaviour:
   - {fileID: 797698478383829448}
   - {fileID: -4963520708463876749}
   EditorData:
-    PanOffset: {x: 123.40534, y: 178.91605}
-    Zoom: 0.974796
+    PanOffset: {x: 112.701515, y: 190.06729}
+    Zoom: 1.138543
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
 --- !u!114 &797698478383829448
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 477.7597, y: 76.87544}
+  Position: {x: 480, y: 80}
   Name: Room 2 ini. (2)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 6ba48be7cf83a1a4bba582dfd02438b0, type: 3}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 159.47641, y: 231.44385}
+  Position: {x: 160, y: 240}
   Name: Room 3 ini. (2)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 279d0d3dbda7c3a439d51a1f36393236, type: 3}
