@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 320.91245, y: 127.17498}
+  Position: {x: 320.01984, y: 128.96017}
   Name: Spawn
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 89d4448cc47937a45ba7b3b2d8da3b77, type: 3}
@@ -96,20 +96,6 @@ MonoBehaviour:
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: a6c3e08d706ef65458beaa6e547ce025, type: 3}
   RoomTemplateSets: []
---- !u!114 &-5897106834191076670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f692f83df7c1b5468af64edd22287dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  From: {fileID: -6801701075625982577}
-  To: {fileID: 2300838508179791892}
 --- !u!114 &-5129611727822216143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 481.10666, y: 127.1848}
+  Position: {x: 478.90506, y: 125.71707}
   Name: Room 3 ini.
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: ccb1935b7dc27c54a9a8ae94db5a05c0, type: 3}
@@ -179,9 +165,7 @@ MonoBehaviour:
   - {fileID: 3741566957967128094}
   - {fileID: 4206685023576862113}
   - {fileID: 2470032868399791555}
-  - {fileID: -5897106834191076670}
   - {fileID: -5129611727822216143}
-  - {fileID: 6420401107506709177}
   CorridorIndividualRoomTemplates:
   - {fileID: 1981640358974300817, guid: 25605f9ac25fc144a991d8c5ce32715c, type: 3}
   - {fileID: 5269586885113522734, guid: f23686aba54bcd04a9dffff37c55dd4b, type: 3}
@@ -199,28 +183,11 @@ MonoBehaviour:
   - {fileID: -6654891273733126063}
   - {fileID: -2524430282647841426}
   - {fileID: -8171108319639531584}
-  - {fileID: 1197113966824082482}
   EditorData:
-    PanOffset: {x: 176.86072, y: 208.17754}
-    Zoom: 1.0237793
+    PanOffset: {x: 56.357998, y: 128.80963}
+    Zoom: 1.1203238
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
---- !u!114 &1197113966824082482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Position: {x: 638.7924, y: 128.43753}
-  Name: Room
-  IndividualRoomTemplates: []
-  RoomTemplateSets: []
 --- !u!114 &1812199668034048970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,9 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Position: {x: 478.94882, y: 48.86391}
-  Name: Room 2 ini.
+  Name: Room Portal
   IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: 596082545a37750428651f8a7cdc9628, type: 3}
+  - {fileID: 4898221168641879181, guid: 307c9c0af04971c4ca22f3d01d960497, type: 3}
   RoomTemplateSets: []
 --- !u!114 &2422962129829237046
 MonoBehaviour:
@@ -356,17 +323,3 @@ MonoBehaviour:
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 47a2280902b69534fb4d55cae6b47cc2, type: 3}
   RoomTemplateSets: []
---- !u!114 &6420401107506709177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f692f83df7c1b5468af64edd22287dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  From: {fileID: -2809692606796441334}
-  To: {fileID: 1197113966824082482}

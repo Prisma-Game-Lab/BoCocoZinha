@@ -305,17 +305,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ba4ef65c-da9e-4912-bd24-09054f0d9882",
-                    "path": "<Keyboard>/#(L)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "119b734b-cab2-423c-a5ef-7ac6ae42ce66",
                     "path": "<Keyboard>/space",
                     "interactions": "",

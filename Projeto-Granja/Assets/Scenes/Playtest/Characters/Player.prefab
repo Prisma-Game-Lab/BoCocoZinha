@@ -212,10 +212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e09d5447fb7a0438f5732618580e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
   attack: 3
   defense: 3
-  speed: 8
+  speed: 10
   invincible: 0
   invincibilityDuration: 3
   hpText: {fileID: 0}
