@@ -220,6 +220,7 @@ MonoBehaviour:
   invincibilityDuration: 3
   hpText: {fileID: 0}
   DeathPanel: {fileID: 0}
+  inCyclone: 0
 --- !u!114 &2511941399407810499
 MonoBehaviour:
   m_ObjectHideFlags: 0
