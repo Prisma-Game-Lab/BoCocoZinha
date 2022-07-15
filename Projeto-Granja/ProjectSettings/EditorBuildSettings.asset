@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Play.unity
     guid: a77e5eef67eebc941a86fe88012badbb
-  - enabled: 0
-    path: Assets/Teste/Playtest/Playtest Scene.unity
-    guid: 220cb7b9cdabd534e8f1a0a4f1efa129
   - enabled: 1
     path: Assets/Scenes/Playtest/Playtest Scene.unity
+    guid: 5a951efdf9d594842ac32b4bca3a4ccd
+  - enabled: 1
+    path: Assets/Scenes/Playtest/Nivel 2 Scene.unity
     guid: c002ee1508a126b4e86c0a8b9007b5df
   m_configObjects: {}
