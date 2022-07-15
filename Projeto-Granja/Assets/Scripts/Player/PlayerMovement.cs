@@ -106,9 +106,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!isDashing && !playerAttack.isAttacking)
+        if(playerAttack)
         {
-            rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
+            if(!isDashing && !playerAttack.isAttacking)
+            {
+                rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
+            }
         }
     }
 }

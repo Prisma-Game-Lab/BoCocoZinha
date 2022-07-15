@@ -55,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 ChasePlayer();
             } 
-            else 
+            else if(!isAttacking)
             {
                 PatrolMovement();
             }
@@ -130,10 +130,13 @@ public class EnemyMovement : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(player.transform.position, this.transform.position);
 
-        if (distanceToPlayer < followTreshold)
+        if (distanceToPlayer < followTreshold || isAttacking)
         {
             movVector = new Vector2(0.0f, 0.0f);
-            StartCoroutine(GetComponent<EnemyAttack>().Attack(stats.attack, player.transform));
+            if(!isAttacking)
+            {
+                StartCoroutine(GetComponent<EnemyAttack>().Attack(stats.attack, player.transform.position));
+            }
         } 
         else
         {

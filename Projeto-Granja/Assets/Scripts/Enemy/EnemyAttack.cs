@@ -17,17 +17,17 @@ public class EnemyAttack : MonoBehaviour
         canAttack = true;
     }
 
-    public IEnumerator Attack(int damage, Transform attackPoint)
+    public IEnumerator Attack(int damage, Vector3 attackPoint)
     {
         if(canAttack)
         {
             Debug.Log("Armou");
             StartCoroutine(AttackCooldown());
+            StartCoroutine(MovementStop());
 
             yield return new WaitForSeconds(attackWindup);
             Debug.Log("Pei no galo");
-            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, range, playerLayer);
-            StartCoroutine(MovementStop());
+            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint, range, playerLayer);
 
             foreach (Collider2D player in hitPlayer)
             {
@@ -42,7 +42,7 @@ public class EnemyAttack : MonoBehaviour
     {
         GetComponent<EnemyMovement>().isAttacking = true;
 
-        yield return new WaitForSeconds(attackTime);
+        yield return new WaitForSeconds(attackTime + attackWindup);
 
         GetComponent<EnemyMovement>().isAttacking = false;
     }
