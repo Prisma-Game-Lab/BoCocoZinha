@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 801.39, y: 377.58936}
+  Position: {x: 800.39966, y: 368.67636}
   Name: Room 2 ini. (2)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 31b6566d640d27842859f0386a128819, type: 3}
@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 637.74713, y: 573.88135}
+  Position: {x: 640, y: 528}
   Name: Room 3 ini. (3)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: d561421d93e57ac40be68f790c2eb74f, type: 3}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 802.3804, y: 476.05484}
+  Position: {x: 800, y: 448}
   Name: Room 3 ini. (2)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 65e1910f4e49ca6478f375cecd035e02, type: 3}
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 799.03235, y: 200.36768}
+  Position: {x: 800, y: 208}
   Name: Room 3 ini.
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: c688a369840c121449258b8b5a16d26b, type: 3}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 650.20306, y: 288.6555}
+  Position: {x: 639.3094, y: 286.67484}
   Name: Spawn
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: a84fb0c1fb4d84743bc6f970946cb95c, type: 3}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 801.2247, y: 571.95416}
+  Position: {x: 800.2343, y: 528.3795}
   Name: Room 2 ini. (3)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: d8b9ad0a907d7384ea9798c9d31fe227, type: 3}
@@ -165,7 +165,9 @@ MonoBehaviour:
   - {fileID: 4993001250599465616}
   - {fileID: 5004530675741459111}
   - {fileID: 681084685735125170}
-  CorridorIndividualRoomTemplates: []
+  CorridorIndividualRoomTemplates:
+  - {fileID: 1981640358974300817, guid: 58f20f9d85f2a6d4c9ffedbffed343df, type: 3}
+  - {fileID: 5269586885113522734, guid: 76c530a06b194794b805a666a0cc2c48, type: 3}
   CorridorRoomTemplateSets: []
   DefaultIndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: a238bc49828a2a14aaf4a5770ba56732, type: 3}
@@ -181,7 +183,7 @@ MonoBehaviour:
   - {fileID: -976540179920361977}
   - {fileID: -1850776489627056213}
   EditorData:
-    PanOffset: {x: -315.86844, y: -149.78148}
+    PanOffset: {x: -291.1103, y: -109.17796}
     Zoom: 1.0097617
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
@@ -211,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 961.3776, y: 283.26495}
+  Position: {x: 959.397, y: 288.2166}
   Name: Room 2 ini.
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 191c314b2f75524448efc7021ddee301, type: 3}
@@ -242,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 637.4321, y: 469.8601}
+  Position: {x: 640, y: 448}
   Name: Boss
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 0d8313c39f9446e46a64e3ea821bbb54, type: 3}
