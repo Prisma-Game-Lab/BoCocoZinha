@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHurtbox : MonoBehaviour
 {
-    public BoxCollider2D hurtbox;
+    public Collider2D hurtbox;
     public PlayerStats stats;
     private AudioManager audioManager;
     private PlayerMovement playerMovement;
