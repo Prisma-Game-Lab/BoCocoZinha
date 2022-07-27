@@ -22,6 +22,9 @@ public class PlayerStats : MonoBehaviour
 
     public bool inCyclone;
 
+    public float currentRoomX;
+    public float currentRoomY;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,9 @@ public class PlayerStats : MonoBehaviour
         invincibleTimer = -1;
         hpText = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Text>();
         audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
+
+        currentRoomX = gameObject.GetComponentInParent<Transform>().position.x;
+        currentRoomY = gameObject.GetComponentInParent<Transform>().position.y;
     }
 
     // Update is called once per frame

@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 320, y: 160}
+  Position: {x: 320.73395, y: 160}
   Name: Room 0 inimigos
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 77f3ab88ada92e1408a4a3d22301ee20, type: 3}
@@ -201,8 +201,8 @@ MonoBehaviour:
   - {fileID: 797698478383829448}
   - {fileID: -4963520708463876749}
   EditorData:
-    PanOffset: {x: 155.5883, y: 219.37617}
-    Zoom: 1.115886
+    PanOffset: {x: 221.10107, y: 109.89746}
+    Zoom: 0.8551169
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
 --- !u!114 &797698478383829448
