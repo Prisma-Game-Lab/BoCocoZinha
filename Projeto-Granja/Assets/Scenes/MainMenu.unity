@@ -495,7 +495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7386907, y: 0.8156581}
   m_AnchorMax: {x: 0.82677346, y: 0.92082906}
-  m_AnchoredPosition: {x: -0.1000061, y: 0.3999939}
+  m_AnchoredPosition: {x: -0.10003662, y: 0.3999939}
   m_SizeDelta: {x: 151.11157, y: -22.922394}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351358686
@@ -2134,7 +2134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39112893, y: 0.036000002}
   m_AnchorMax: {x: 0.6088711, y: 0.13466114}
-  m_AnchoredPosition: {x: -0.30000305, y: 0.3999939}
+  m_AnchoredPosition: {x: -0.30000305, y: 0.4000244}
   m_SizeDelta: {x: 0.81679916, y: -0.50429916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074911305
@@ -3202,6 +3202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87519fdddc628504785948b68a0fda0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: Backstory
 --- !u!1 &1676947875
 GameObject:
   m_ObjectHideFlags: 0
