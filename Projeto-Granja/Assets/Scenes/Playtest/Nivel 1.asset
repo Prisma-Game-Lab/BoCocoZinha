@@ -201,8 +201,8 @@ MonoBehaviour:
   - {fileID: 797698478383829448}
   - {fileID: -4963520708463876749}
   EditorData:
-    PanOffset: {x: 305.30023, y: 225.67114}
-    Zoom: 0.8551169
+    PanOffset: {x: 183.6809, y: 180.95232}
+    Zoom: 0.9263988
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
 --- !u!114 &797698478383829448
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 160, y: 240}
+  Position: {x: 160.2762, y: 236.3416}
   Name: Room 3 ini. (2)
   IndividualRoomTemplates:
   - {fileID: 4898221168641879181, guid: 279d0d3dbda7c3a439d51a1f36393236, type: 3}
