@@ -50,7 +50,7 @@ public class BossCyclone : MonoBehaviour
 
         damageArea.SetActive(false);
 
-        if(player.GetComponent<PlayerStats>().inCyclone = true)
+        if(player.GetComponent<PlayerStats>().inCyclone)
         {
             player.GetComponent<PlayerStats>().inCyclone = false;
         }

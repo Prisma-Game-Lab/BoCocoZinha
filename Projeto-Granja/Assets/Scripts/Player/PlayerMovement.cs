@@ -6,13 +6,16 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float movX;
-    private float movY;
+    [SerializeField] private float movX;
+    [SerializeField] private float movY;
     private Vector2 movVector;
     private int moveSpeed;
     private Animator animator;
     private PlayerAttack playerAttack;
 
+    [Header("Animação")] 
+    [Range(0,1)] public float movementDeadzone = 0.1f;
+    
     [Header("Atributos Dash")]
     public float dashCooldownTimer;
     public float dashingSpeed;
@@ -20,6 +23,13 @@ public class PlayerMovement : MonoBehaviour
     public bool isDashing;
     private bool canDash;
     private Vector2 dashingDirection;
+    
+    //Animator hashes
+    private int animMoving = Animator.StringToHash("Moving");
+    private int animDashing = Animator.StringToHash("Dashing");
+    private int animAttack = Animator.StringToHash("Attack");
+    private int animHorizontal = Animator.StringToHash("Horizontal");
+    private int animVertical = Animator.StringToHash("Vertical");
 
     // Start is called before the first frame update
     void Start()
@@ -39,46 +49,34 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue mov)
     {
-        if(!isDashing)
+        if (isDashing) return;
+        
+        movVector = mov.Get<Vector2>();
+        
+        if (movVector.magnitude > movementDeadzone)
         {
-            movVector = mov.Get<Vector2>();
+            // cache movement input in separate axis
             movX = movVector.x;
             movY = movVector.y;
-            if (movX < 0)
-            {
-                animator.SetTrigger("Side");
-                this.gameObject.transform.localScale = new Vector3(-0.2f, 0.2f, 0.2f);
-            } 
-            else if (movX > 0)
-            {
-                this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                animator.SetTrigger("Side");
-            }
-
-            if(movY < 0)
-            {
-                animator.SetTrigger("Down");
-            }
-            else if(movY > 0)
-            {
-                animator.SetTrigger("Up");
-            }
             
-            if (movX == 0 && movY == 0)
-            {
-                animator.ResetTrigger("Up");
-                animator.ResetTrigger("Side");
-                animator.ResetTrigger("Down");
-                animator.SetTrigger("Idle");
-            }
+            animator.SetBool(animMoving, true);
+            animator.SetFloat(animHorizontal, movX);
+            animator.SetFloat(animVertical, movY);
+
+            playerAttack.UpdateAttackPoint(movVector);
+        }
+        else
+        {
+            // clear vector to prevent controller drift
+            movVector = Vector2.zero; 
+            animator.SetBool(animMoving,false);
         }
     }
 
     void OnDash()
     {  
-        if (!isDashing && canDash)
+        if (!isDashing && canDash && !playerAttack.isAttacking)
         {
-            //nimator.SetTrigger("Dash");
             StartCoroutine(Dash());
         }
     }
@@ -88,6 +86,9 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         dashingDirection = new Vector2(movX, movY);
+        
+        animator.SetBool(animDashing,true);
+        
         if(dashingDirection == Vector2.zero)
         {
             dashingDirection = new Vector2(transform.localScale.x, 0);
@@ -98,7 +99,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingDuration);
 
         isDashing = false;
-
+        rb.velocity = Vector2.zero;
+        animator.SetBool(animDashing,false);
+        
         yield return new WaitForSeconds(dashCooldownTimer);
 
         canDash = true;
@@ -106,12 +109,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(playerAttack)
-        {
-            if(!isDashing && !playerAttack.isAttacking)
-            {
-                rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
-            }
-        }
+        if (!playerAttack) return;
+        if (isDashing || playerAttack.isAttacking) return;
+        
+        rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
     }
 }
