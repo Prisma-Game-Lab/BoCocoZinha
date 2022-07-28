@@ -83,6 +83,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void playSteps()
+    {
+        string soundType1, soundType2;
+        soundType1 = "step_1";
+        soundType2 = "step_2";
+
+        int index = Random.Range(0, 2);
+        if (index == 0)
+            AudioManager.instance.Play(soundType1);
+        else
+        {
+            AudioManager.instance.Play(soundType2);
+        }
+    }
+
     private IEnumerator Dash()
     {
         canDash = false;
