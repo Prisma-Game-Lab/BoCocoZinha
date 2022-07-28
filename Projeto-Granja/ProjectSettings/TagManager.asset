@@ -10,6 +10,7 @@ TagManager:
   - PlayerHealth
   - EnemyHealth
   - PersistentData
+  - Breakable
   layers:
   - Default
   - TransparentFX

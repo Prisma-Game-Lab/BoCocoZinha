@@ -173,6 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9195488142f437246924e895785a09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movX: 0
+  movY: 0
   movementDeadzone: 0.1
   dashCooldownTimer: 1.5
   dashingSpeed: 20
@@ -213,8 +215,7 @@ MonoBehaviour:
   hpText: {fileID: 0}
   DeathPanel: {fileID: 0}
   inCyclone: 0
-  currentRoomX: 0
-  currentRoomY: 0
+  camAnchor: {fileID: 3390341914616138186, guid: 79911fa5c62a80f4d9aec87fb2b75524, type: 3}
 --- !u!114 &2511941399407810499
 MonoBehaviour:
   m_ObjectHideFlags: 0
