@@ -360,6 +360,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1e051ca2-84d8-46fb-ae95-e1bb18e5fcc2",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "NormalAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2041d972-e98f-48bb-88cb-aed2d18efcb6",
                     "path": "<Keyboard>/#(K)",
                     "interactions": "",
@@ -376,6 +387,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "ChargedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc70d811-6e09-49dc-ad64-0552aabf376f",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "ChargedAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
