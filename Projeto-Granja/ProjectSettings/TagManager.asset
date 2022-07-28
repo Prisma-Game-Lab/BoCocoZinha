@@ -11,6 +11,7 @@ TagManager:
   - EnemyHealth
   - PersistentData
   - Breakable
+  - Virtual Cam
   layers:
   - Default
   - TransparentFX

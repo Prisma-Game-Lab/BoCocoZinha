@@ -25,6 +25,7 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject camAnchor;
     public GameObject anchor;
+    public CinemachineVirtualCamera _camera;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,6 @@ public class PlayerStats : MonoBehaviour
         hpText = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Text>();
         audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
 
-        anchor = this.gameObject;
     }
 
     // Update is called once per frame
@@ -86,5 +86,8 @@ public class PlayerStats : MonoBehaviour
             Destroy(anchor.gameObject);
         }
         anchor = Instantiate(camAnchor, new Vector2(x, y), Quaternion.identity);
+        _camera = GameObject.FindGameObjectWithTag("Virtual Cam").GetComponent<CinemachineVirtualCamera>();
+        _camera.Follow = anchor.transform;
+        _camera.LookAt = anchor.transform;
     }
 }
