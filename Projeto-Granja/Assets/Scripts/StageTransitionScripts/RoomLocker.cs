@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SceneLocker : MonoBehaviour
+public class RoomLocker : MonoBehaviour
 {
     public List<GameObject> enemies;
     private bool locked;
