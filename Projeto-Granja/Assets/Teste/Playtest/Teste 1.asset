@@ -307,7 +307,7 @@ MonoBehaviour:
   Position: {x: 160, y: 240}
   Name: Room 3 ini. (2)
   IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: f3520ae8ecafa0940bb2776ee228dde4, type: 3}
+  - {fileID: 4898221168641879181, guid: ffa630796e5c74d48b6461f95e9fb3e5, type: 3}
   RoomTemplateSets: []
 --- !u!114 &6279658930602083907
 MonoBehaviour:
