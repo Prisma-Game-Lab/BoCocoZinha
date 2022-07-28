@@ -18,9 +18,19 @@ public class FollowPlayer : MonoBehaviour
     {
         if (!isOnPlayer)
         {
-            _camera.Follow = GameObject.FindGameObjectWithTag("Player").transform;
-            _camera.LookAt = GameObject.FindGameObjectWithTag("Player").transform;
-            isOnPlayer = true;
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().anchor != null)
+            {
+                _camera.Follow = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().anchor.transform;
+                _camera.LookAt = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().anchor.transform;
+                isOnPlayer = true;
+                Debug.Log("aaaaaaaaaa");
+            } else
+            {
+                
+                _camera.Follow = GameObject.FindGameObjectWithTag("Player").transform;
+                _camera.LookAt = GameObject.FindGameObjectWithTag("Player").transform;
+                isOnPlayer = true;
+            }
         }
     }
 }

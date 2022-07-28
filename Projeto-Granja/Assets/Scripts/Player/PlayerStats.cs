@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -22,8 +23,8 @@ public class PlayerStats : MonoBehaviour
 
     public bool inCyclone;
 
-    public float currentRoomX;
-    public float currentRoomY;
+    public GameObject camAnchor;
+    public GameObject anchor;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +35,7 @@ public class PlayerStats : MonoBehaviour
         hpText = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Text>();
         audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
 
-        currentRoomX = gameObject.GetComponentInParent<Transform>().position.x;
-        currentRoomY = gameObject.GetComponentInParent<Transform>().position.y;
+        anchor = this.gameObject;
     }
 
     // Update is called once per frame
@@ -77,5 +77,14 @@ public class PlayerStats : MonoBehaviour
         {
             hpText.text = "Player Health: " + health.ToString();
         }
+    }
+
+    public void Anchor(float x, float y)
+    {
+        if (anchor != this.gameObject)
+        {
+            Destroy(anchor.gameObject);
+        }
+        anchor = Instantiate(camAnchor, new Vector2(x, y), Quaternion.identity);
     }
 }
