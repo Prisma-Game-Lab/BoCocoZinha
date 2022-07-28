@@ -55,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnNormalAttack() 
     {
-        if(canNormalAttack)
+        if(canNormalAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
             audioManager.Play("miss_hit");
             Attack(normalDamage, normalCooldown); 
@@ -65,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnChargedAttack() 
     {
-        if(canChargedAttack)
+        if(canChargedAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
             Attack(chargedDamage, chargedCooldown);
             StartCoroutine(ChargedCooldown(chargedCooldown));
