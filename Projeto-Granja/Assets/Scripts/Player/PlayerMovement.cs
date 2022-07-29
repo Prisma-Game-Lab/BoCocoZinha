@@ -101,7 +101,8 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         dashingDirection = new Vector2(movX, movY);
-        
+
+        AudioManager.instance.Play("player_dash");
         animator.SetBool(animDashing,true);
         
         if(dashingDirection == Vector2.zero)

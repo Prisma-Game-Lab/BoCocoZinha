@@ -23,7 +23,6 @@ public class PlayerAttack : MonoBehaviour
     private bool canNormalAttack;
     private bool canChargedAttack;
     private Animator animator;
-    private AudioManager audioManager;
     
     //Animator hashes
     private int animAttack = Animator.StringToHash("Attack");
@@ -37,7 +36,6 @@ public class PlayerAttack : MonoBehaviour
         canChargedAttack = true;
         animator = GetComponent<Animator>();
         animatorAttackPoint = attackPoint.GetComponent<Animator>();
-        audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
     }
 
     /// <summary>
@@ -57,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(canNormalAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
-            audioManager.Play("miss_hit");
+            AudioManager.instance.Play("miss_hit");
             Attack(normalDamage, normalCooldown); 
             StartCoroutine(NormalCooldown(normalCooldown));
         }
