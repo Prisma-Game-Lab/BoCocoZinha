@@ -6,11 +6,11 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    private CinemachineVirtualCamera _camera;
-    private bool isOnPlayer = false;
+    [SerializeField]private CinemachineVirtualCamera _camera;
+    [SerializeField] private bool isOnPlayer = false;
     void Start()
     {
-        _camera = GetComponent<CinemachineVirtualCamera>();
+        
     }
 
     // Update is called once per frame
@@ -26,10 +26,14 @@ public class FollowPlayer : MonoBehaviour
                 Debug.Log("aaaaaaaaaa");
             } else
             {*/
-
-                _camera.Follow = GameObject.FindGameObjectWithTag("Player").transform;
-                _camera.LookAt = GameObject.FindGameObjectWithTag("Player").transform;
+            _camera = GameObject.FindGameObjectWithTag("Virtual Cam").GetComponent<CinemachineVirtualCamera>();
+            if (_camera != null)
+            {
                 isOnPlayer = true;
+                Debug.Log(transform.position);
+                _camera.Follow = transform;
+                _camera.LookAt = transform;
+            }
             //}
         }
     }
