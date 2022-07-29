@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 1859986384433715524}
   - component: {fileID: 6650769901132142358}
   - component: {fileID: 2895163354527308934}
+  - component: {fileID: 1093655319255700202}
   m_Layer: 3
   m_Name: Boxe-Ollie
   m_TagString: Enemy
@@ -244,3 +245,18 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1093655319255700202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838281694477377664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bff96e372385094eab2183e58de3893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDropado: {fileID: 1058380602464207457, guid: a86506295504d6948ace97e1517512ec, type: 3}
+  itemSprites:
+  - {fileID: 21300000, guid: eb064878207ed0c4bbd5574ff868d928, type: 3}

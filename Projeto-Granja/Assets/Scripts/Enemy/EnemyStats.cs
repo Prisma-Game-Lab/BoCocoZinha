@@ -10,10 +10,7 @@ public class EnemyStats : MonoBehaviour
     public int defense;
     public int speed;
 
-    //public Text hpEnemyText;
-
-    [Header("DROPS E ITENS")]
-    public GameObject[] itensDropados;
+    //public Text hpEnemyText
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +24,7 @@ public class EnemyStats : MonoBehaviour
         //hpEnemyText.text = "Enemy Health: " + health.ToString();
 
     }
-    //TODO: Criar função dinamica pra nao ficar repetindo código
+    //TODO: Criar funï¿½ï¿½o dinamica pra nao ficar repetindo cï¿½digo
     private void playDamageSound()
     {
         string soundType1, soundType2;
@@ -42,7 +39,7 @@ public class EnemyStats : MonoBehaviour
             AudioManager.instance.Play(soundType2);
         }
     }
-    //TODO: Criar função dinamica pra nao ficar repetindo código
+    //TODO: Criar funï¿½ï¿½o dinamica pra nao ficar repetindo cï¿½digo
     private void playDeadSound()
     {
         string soundType1, soundType2;
@@ -66,14 +63,8 @@ public class EnemyStats : MonoBehaviour
         if (health <= 0)
         {
             playDeadSound();
-            DropItem();
+            GetComponent<ItemDrop>().DropItem();
             Destroy(gameObject);
         }
-    }
-
-    void DropItem()
-    {
-        GameObject item = Instantiate(itensDropados[0], gameObject.transform.position, Quaternion.identity);
-
     }
 }

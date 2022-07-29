@@ -90,6 +90,7 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 Destroy(enemy.gameObject);
+                enemy.GetComponent<ItemDrop>().DropItem();
             }
         }
     }
