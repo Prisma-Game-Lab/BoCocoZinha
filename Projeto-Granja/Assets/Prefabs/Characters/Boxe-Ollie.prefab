@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1663823902709564817}
   - component: {fileID: 7106205541862953224}
   - component: {fileID: 2803862784029001275}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Follow radius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.2512905, y: -0.92784226}
   serializedVersion: 2
-  m_Radius: 2.47
+  m_Radius: 3.5
 --- !u!50 &5011070610592977915
 Rigidbody2D:
   serializedVersion: 4
