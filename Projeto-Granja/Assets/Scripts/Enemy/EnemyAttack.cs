@@ -11,10 +11,12 @@ public class EnemyAttack : MonoBehaviour
     public float attackCooldown;
     //public Transform attackPoint;
     public LayerMask playerLayer;
+    private AudioManager audioManager;
 
     private void Start() 
     {
         canAttack = true;
+        audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
     }
 
     public IEnumerator Attack(int damage, Vector3 attackPoint)
@@ -29,6 +31,7 @@ public class EnemyAttack : MonoBehaviour
 
             foreach (Collider2D player in hitPlayer)
             {
+                audioManager.Play("player_hit");
                 player.GetComponent<PlayerStats>().health -= damage;
                 player.GetComponent<PlayerStats>().invincible = true;
             }
