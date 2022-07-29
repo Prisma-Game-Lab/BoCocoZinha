@@ -2459,6 +2459,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: credits_music
+    clip: {fileID: 8300000, guid: 09397b32a3bd70945a8d2e232c26598e, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: boss_music
+    clip: {fileID: 8300000, guid: ae4e1aec211dd8b498e389a684a6786f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: game_music
+    clip: {fileID: 8300000, guid: 66eb4dbef6114c64aae46d65edeaabd9, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: menu_music
+    clip: {fileID: 8300000, guid: 63e292bebf12697448fc24d0d60848fb, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
   - name: button_in
     clip: {fileID: 8300000, guid: b96a6a10afbf87e41aeaae66c233ead6, type: 3}
     volume: 1
@@ -2541,7 +2577,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
   - name: enemy_hit_feedback
-    clip: {fileID: 8300000, guid: 3f70acd22b113ee4bbdab27a56be1e1f, type: 3}
+    clip: {fileID: 8300000, guid: 60799ece157366940abbb35a841fc358, type: 3}
     volume: 0.5
     volumeVariance: 0
     pitch: 1
@@ -2578,6 +2614,60 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_damage_2
     clip: {fileID: 8300000, guid: 7edb8ab634a34214383d582ef3cf4a31, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: boss_scream
+    clip: {fileID: 8300000, guid: 67e23ccd89f25b944862c65427ced6ce, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: boss_dead
+    clip: {fileID: 8300000, guid: 4b8b1c328489d78469f810b7dcf2a239, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: boss_cycle
+    clip: {fileID: 8300000, guid: 506495b9d1e6a8a4cba80890fa1614e7, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: boss_damage
+    clip: {fileID: 8300000, guid: df55383a7186e6847bf719574ff60c75, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: boss_stomp
+    clip: {fileID: 8300000, guid: b6f0c92e3f07d7c4f9c11181763e8505, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: ambience_swamp
+    clip: {fileID: 8300000, guid: e11171f5f39edfa479b45d20cfaf41f2, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
