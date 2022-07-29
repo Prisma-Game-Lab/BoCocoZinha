@@ -1577,8 +1577,8 @@ MonoBehaviour:
     Seu cozinheiro era ningu\xE9m mais, ningu\xE9m menos que Toni Gal\xE3o, o grande
     galo cozinheiro e o querido av\xF4 da fam\xEDlia Galo. "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6b0220cdd5ecf5d4e84ec1280973b95e, type: 2}
-  m_sharedMaterial: {fileID: -2786796974238619833, guid: 6b0220cdd5ecf5d4e84ec1280973b95e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 22575100dc2e14d4e8a9c87af36d4c6e, type: 2}
+  m_sharedMaterial: {fileID: 4383010861848203997, guid: 22575100dc2e14d4e8a9c87af36d4c6e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.75
+  m_fontSize: 35.65
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1

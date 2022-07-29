@@ -176,7 +176,7 @@ MonoBehaviour:
   movX: 0
   movY: 0
   movementDeadzone: 0.1
-  dashCooldownTimer: 1.5
+  dashCooldownTimer: 0.5
   dashingSpeed: 20
   dashingDuration: 0.2
   isDashing: 0
@@ -206,16 +206,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e09d5447fb7a0438f5732618580e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  attack: 3
-  defense: 3
-  speed: 10
+  health: 100
+  attack: 0
+  defense: 0
+  speed: 6
   invincible: 0
   invincibilityDuration: 3
   hpText: {fileID: 0}
   DeathPanel: {fileID: 0}
   inCyclone: 0
   camAnchor: {fileID: 3390341914616138186, guid: 79911fa5c62a80f4d9aec87fb2b75524, type: 3}
+  anchor: {fileID: 0}
+  _camera: {fileID: 0}
 --- !u!114 &2511941399407810499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,12 +232,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalCooldown: 0.3
   normalDamage: 2
-  chargedCooldown: 5
+  chargedCooldown: 1.5
   chargedDamage: 10
   range: 0.5
   distance: 5
   knockBackTime: 0.25
-  knockBackDistance: 10
+  knockBackDistance: 3
   attackPoint: {fileID: 2735921499390141732}
   enemyLayer:
     serializedVersion: 2
