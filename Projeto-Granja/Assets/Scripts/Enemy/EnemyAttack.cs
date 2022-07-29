@@ -21,19 +21,16 @@ public class EnemyAttack : MonoBehaviour
     {
         if(canAttack)
         {
-            Debug.Log("Armou");
             StartCoroutine(AttackCooldown());
             StartCoroutine(MovementStop());
 
             yield return new WaitForSeconds(attackWindup);
-            Debug.Log("Pei no galo");
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint, range, playerLayer);
 
             foreach (Collider2D player in hitPlayer)
             {
                 player.GetComponent<PlayerStats>().health -= damage;
                 player.GetComponent<PlayerStats>().invincible = true;
-                Debug.Log(player.GetComponent<PlayerStats>().health);
             }
         }
     }
@@ -49,12 +46,9 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator AttackCooldown()
     {
-        Debug.Log("cd 0");
-
         canAttack = false;
 
         yield return new WaitForSeconds(attackCooldown + attackWindup + attackTime);
-        Debug.Log("cd 1");
 
         canAttack = true;
     }

@@ -50,7 +50,6 @@ public class PlayerStats : MonoBehaviour
         if (invincible && invincibleTimer == -1)
         {
             invincibleTimer = invincibilityDuration;
-            Debug.Log("Inicio invencivel");
         }
         else if (invincible && invincibleTimer > 0)
         {
@@ -60,7 +59,6 @@ public class PlayerStats : MonoBehaviour
         {
             invincibleTimer = -1;
             invincible = false;
-            Debug.Log("Fim invencivel");
         }
     }
 

@@ -29,13 +29,11 @@ public class RoomLocker : MonoBehaviour
         {
             if (enemy != null)
             {
-                Debug.Log("close door");
                 return;
             }
 
         }
         OpenDoor();
-        Debug.Log("open door");
         return ;
     }
 
