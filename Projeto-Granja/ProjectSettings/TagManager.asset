@@ -12,6 +12,7 @@ TagManager:
   - PersistentData
   - Breakable
   - Virtual Cam
+  - HPBar
   layers:
   - Default
   - TransparentFX
