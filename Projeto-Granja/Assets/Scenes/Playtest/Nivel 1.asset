@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 320, y: 80}
   Name: Room 3 ini. (3)
-  IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: a35289ece8cce4d48a54cc689c8d4602, type: 3}
+  IndividualRoomTemplates: []
   RoomTemplateSets: []
 --- !u!114 &-7602010656813761167
 MonoBehaviour:
@@ -29,10 +28,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 480, y: 160}
+  Position: {x: 480, y: 159.24776}
   Name: Room 3 inimigos
-  IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: b55d4e9ede425454ea78682ee04a383a, type: 3}
+  IndividualRoomTemplates: []
   RoomTemplateSets: []
 --- !u!114 &-6900374223878441991
 MonoBehaviour:
@@ -48,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 160, y: 160}
   Name: Room 2 inimigos
-  IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: 9d685db0d6eacd1429da081676557edc, type: 3}
+  IndividualRoomTemplates: []
   RoomTemplateSets: []
 --- !u!114 &-6718676446090651520
 MonoBehaviour:
@@ -96,8 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 320.73395, y: 160}
   Name: Room Colheita
-  IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: d3651d2faaa985646b6b1b9fd4c4e09a, type: 3}
+  IndividualRoomTemplates: []
   RoomTemplateSets: []
 --- !u!114 &-1697326654786517729
 MonoBehaviour:
@@ -130,8 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 320, y: 0}
   Name: Room 2 ini. (3)
-  IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: d2ffab8c959bfdd469d09e00577a05b6, type: 3}
+  IndividualRoomTemplates: []
   RoomTemplateSets: []
 --- !u!114 &-569716109255151583
 MonoBehaviour:
@@ -188,7 +183,13 @@ MonoBehaviour:
   - {fileID: 5269586885113522734, guid: 76c530a06b194794b805a666a0cc2c48, type: 3}
   CorridorRoomTemplateSets: []
   DefaultIndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: ff67c80040615464a9da4e37eb8bf460, type: 3}
+  - {fileID: 4898221168641879181, guid: 279d0d3dbda7c3a439d51a1f36393236, type: 3}
+  - {fileID: 4898221168641879181, guid: 9d685db0d6eacd1429da081676557edc, type: 3}
+  - {fileID: 4898221168641879181, guid: d3651d2faaa985646b6b1b9fd4c4e09a, type: 3}
+  - {fileID: 4898221168641879181, guid: b55d4e9ede425454ea78682ee04a383a, type: 3}
+  - {fileID: 4898221168641879181, guid: 1f79c3ef2d18e884ea8380b6e99529c9, type: 3}
+  - {fileID: 4898221168641879181, guid: a35289ece8cce4d48a54cc689c8d4602, type: 3}
+  - {fileID: 4898221168641879181, guid: d2ffab8c959bfdd469d09e00577a05b6, type: 3}
   DefaultRoomTemplateSets: []
   Rooms:
   - {fileID: -3768390434313238072}
@@ -201,8 +202,8 @@ MonoBehaviour:
   - {fileID: 797698478383829448}
   - {fileID: -4963520708463876749}
   EditorData:
-    PanOffset: {x: 83.2749, y: 109.39807}
-    Zoom: 1.2207065
+    PanOffset: {x: 23.861635, y: 127.06014}
+    Zoom: 1.3293494
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
 --- !u!114 &797698478383829448
@@ -219,8 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 480, y: 80}
   Name: Room Mix
-  IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: 1f79c3ef2d18e884ea8380b6e99529c9, type: 3}
+  IndividualRoomTemplates: []
   RoomTemplateSets: []
 --- !u!114 &1051856817026671231
 MonoBehaviour:
@@ -306,8 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 160.2762, y: 236.3416}
   Name: Room 3 ini. (2)
-  IndividualRoomTemplates:
-  - {fileID: 4898221168641879181, guid: 279d0d3dbda7c3a439d51a1f36393236, type: 3}
+  IndividualRoomTemplates: []
   RoomTemplateSets: []
 --- !u!114 &6279658930602083907
 MonoBehaviour:
