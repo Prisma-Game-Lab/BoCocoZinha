@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 231622196831874037}
   m_Layer: 5
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: HPBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

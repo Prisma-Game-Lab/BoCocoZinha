@@ -13,8 +13,6 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector] public bool invincible;
     public float invincibilityDuration;
 
-    public Text hpText;
-
     public GameObject DeathPanel;
 
     private float invincibleTimer;
@@ -27,15 +25,17 @@ public class PlayerStats : MonoBehaviour
     public GameObject anchor;
     public CinemachineVirtualCamera _camera;
 
+    private Slider slider;
+
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
         invincible = false;
         invincibleTimer = -1;
-        hpText = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Text>();
         audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
-
+        slider = GameObject.FindGameObjectWithTag("HPBar").GetComponent<Slider>();
+        SetMaxValue(health);
     }
 
     // Update is called once per frame
@@ -68,12 +68,13 @@ public class PlayerStats : MonoBehaviour
         {
             audioManager.Play("player_dead");
             Destroy(this.gameObject);
-            DeathPanel.SetActive(true);
+            //DeathPanel.SetActive(true);
+            slider.value = 0;
             Time.timeScale = 0;
         } 
         else
         {
-            hpText.text = "Player Health: " + health.ToString();
+            slider.value = health;
         }
     }
 
@@ -87,5 +88,11 @@ public class PlayerStats : MonoBehaviour
         _camera = GameObject.FindGameObjectWithTag("Virtual Cam").GetComponent<CinemachineVirtualCamera>();
         _camera.Follow = anchor.transform;
         _camera.LookAt = anchor.transform;
+    }
+
+    private void SetMaxValue(int value)
+    {
+        slider.maxValue = value;
+        slider.value = value;
     }
 }
