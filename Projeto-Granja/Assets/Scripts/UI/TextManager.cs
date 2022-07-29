@@ -14,6 +14,7 @@ public class TextManager : MonoBehaviour
     public string scene;
 
     private int index;
+    private AudioManager am;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,9 @@ public class TextManager : MonoBehaviour
         text.text = texts[index].text;
 
         EventSystem.current.SetSelectedGameObject(button);
+
+        am = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
+
     }
 
     // Update is called once per frame
@@ -29,10 +33,14 @@ public class TextManager : MonoBehaviour
         
     }
 
+    public void OnNormalAttack(){
+        ShowText();
+    }
     public void ShowText(){
         if (index < texts.Count - 1){
             index++;
             text.text = texts[index].text;
+            am.Play("turn_page");
         }
         else if (index == texts.Count -1 ){
             SceneManager.LoadScene(scene);
