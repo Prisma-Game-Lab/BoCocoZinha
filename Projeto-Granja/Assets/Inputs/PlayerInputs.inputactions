@@ -58,6 +58,24 @@
                     "processors": "",
                     "interactions": "Hold(duration=1)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CancelChargedAttack",
+                    "type": "Button",
+                    "id": "7c82b417-a80c-488f-9527-d0b704378b08",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Charging",
+                    "type": "Button",
+                    "id": "37b3db86-0fb6-4306-a154-9ee7de441826",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -399,6 +417,72 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ChargedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e56b02c5-1907-416b-bb25-a3ae3aaf482f",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "CancelChargedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df454c57-d455-404e-9030-96ed89544c90",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "CancelChargedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18727eb6-2c24-4375-b699-6c574c090928",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CancelChargedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa2acc63-98d2-4897-874f-c8b22729e750",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Charging",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "688b98f3-0a44-487c-9146-e9ce12e6a748",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Charging",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fc04fb0-7b01-4851-90ad-56f26a48b370",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Charging",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

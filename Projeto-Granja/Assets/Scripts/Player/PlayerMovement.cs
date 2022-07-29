@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (!playerAttack) return;
-        if (isDashing || playerAttack.isAttacking) return;
+        if (isDashing || playerAttack.isAttacking || playerAttack.isCharging) return;
         
         rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
     }

@@ -29,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
 
     public float attackTime;
     public bool isAttacking;
+    public bool isCharging;
 
     private void Start() 
     {
@@ -59,6 +60,17 @@ public class PlayerAttack : MonoBehaviour
             Attack(normalDamage, normalCooldown); 
             StartCoroutine(NormalCooldown(normalCooldown));
         }
+    }
+
+    public void OnCharging()
+    {
+        StartCoroutine(Charging());
+    }
+
+    public void OnCancelChargedAttack()
+    {
+        StopCoroutine(Charging());
+        isCharging = false;
     }
 
     public void OnChargedAttack() 
@@ -138,6 +150,15 @@ public class PlayerAttack : MonoBehaviour
         enemy_rb.velocity = Vector2.zero;
         enemy_rb.isKinematic = true;
         enemy.GetComponent<EnemyMovement>().knockback = false;
+    }
+
+    private IEnumerator Charging()
+    {
+        isCharging = true;
+
+        yield return new WaitForSeconds(1.0f);
+
+        isCharging = false;
     }
 
     private void OnDrawGizmosSelected() 
