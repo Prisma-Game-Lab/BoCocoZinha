@@ -134,6 +134,7 @@ public class PlayerAttack : MonoBehaviour
         enemy_rb.AddForce(diff, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(knockBackTime);
+        if (enemy_rb == null) yield break;
         enemy_rb.velocity = Vector2.zero;
         enemy_rb.isKinematic = true;
         enemy.GetComponent<EnemyMovement>().knockback = false;
