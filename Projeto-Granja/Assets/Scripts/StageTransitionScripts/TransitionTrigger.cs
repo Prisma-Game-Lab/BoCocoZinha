@@ -9,7 +9,8 @@ public class TransitionTrigger : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(sceneIndex);
+        GetComponent<LevelLoader>().LoadLevel();
+        //SceneManager.LoadScene(sceneIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

@@ -43,7 +43,7 @@ public class TextManager : MonoBehaviour
             am.Play("turn_page");
         }
         else if (index == texts.Count -1 ){
-            SceneManager.LoadScene(scene);
+            GetComponent<LevelLoader>().LoadLevel();
         }
     }
     
