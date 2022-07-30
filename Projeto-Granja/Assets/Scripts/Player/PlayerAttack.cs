@@ -26,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
     
     //Animator hashes
     private int animAttack = Animator.StringToHash("Attack");
+    private int animMoving = Animator.StringToHash("Moving");
 
     public float attackTime;
     public bool isAttacking;
@@ -155,6 +156,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator Charging()
     {
         isCharging = true;
+        animator.SetBool(animMoving, false);
 
         yield return new WaitForSeconds(1.0f);
 

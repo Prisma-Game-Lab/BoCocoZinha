@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         
         movVector = mov.Get<Vector2>();
         
-        if (movVector.magnitude > movementDeadzone)
+        if (movVector.magnitude > movementDeadzone && !playerAttack.isCharging)
         {
             // cache movement input in separate axis
             movX = movVector.x;
