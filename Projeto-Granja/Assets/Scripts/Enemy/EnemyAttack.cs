@@ -59,4 +59,9 @@ public class EnemyAttack : MonoBehaviour
 
         canAttack = true;
     }
+    private void playEnemyAttackSound()
+    {
+        string[] sounds = { "enemy_swing_1", "enemy_swing_2", "enemy_swing_3" };
+        AudioManager.instance.playMultipleRandomSounds(sounds);
+    }
 }

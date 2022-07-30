@@ -11,12 +11,16 @@ public class PlaySceneSounds : MonoBehaviour
     void Start()
     {
         if (stopOtherMusics)
-            AudioManager.instance.StopAllMusicSounds();
+            AudioManager.instance.StopAllMusicsSounds();
         if(stopEffects)
             AudioManager.instance.StopAllEffectsSounds();
         foreach (string item in musicName)
         {
             AudioManager.instance.Play(item);
         }
+    }
+    public void Play(string soundName)
+    {
+        AudioManager.instance.Play(soundName);
     }
 }

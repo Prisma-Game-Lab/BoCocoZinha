@@ -1,18 +1,17 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-
-	//public AudioMixerGroup mixerGroup;
-
 	public Sound[] soundMusics;
 	public Sound[] soundEffects;
 	public static AudioManager instance;
 
 	void Awake()
 	{
+		//Make Audiomanager persist between scenes
 		if (instance == null)
 			instance = this;
 		else
@@ -22,6 +21,7 @@ public class AudioManager : MonoBehaviour
 		}
 		DontDestroyOnLoad(gameObject);
 
+		//Create audioSources with settings
 		foreach (Sound s in soundMusics)
 		{
 			s.source = gameObject.AddComponent<AudioSource>();
@@ -40,49 +40,51 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
-	public void Play(string sound)
+	//Find specifc sound
+	private Sound GetSound(string sound)
 	{
-
 		Sound s = Array.Find(soundMusics, item => item.name == sound);
 		if (s != null)
 		{
-			s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
-			s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-			s.source.Play();
-			return;
+			return s;
 		}
 
 		s = Array.Find(soundEffects, item => item.name == sound);
 		if (s == null)
 		{
 			Debug.LogWarning("Sound: " + name + " not found!");
-			return;
+			return null;
 		}
-
-		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
-        s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-
-		s.source.Play();
+		return s;
 	}
 
-	public void StopSpecificSound(string name)
+	public void Play(string sound)
 	{
-		Sound s = Array.Find(soundMusics, sound => sound.name == name);
+		Sound s = GetSound(sound);
 		if (s != null)
 		{
-			s.source.Stop();
-			return;
+			s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+			s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+            s.source.Play();
 		}
-		s = Array.Find(soundEffects, sound => sound.name == name);
-		if (s == null)
-		{
-			Debug.LogWarning("Sound: " + name + " not found!");
-			return;
-		}
-		s.source.Stop();
 	}
 
-    public void StopAllMusicSounds()
+	//Play one of the sounds randonly
+	public void playMultipleRandomSounds(string[] sound)
+	{
+		int index = UnityEngine.Random.Range(0, sound.Length);
+		Play(sound[index]);
+	}
+
+
+	public void Stop(string name)
+	{
+		Sound s = GetSound(name);
+		if (s != null)
+			s.source.Stop();
+	}
+
+    public void StopAllMusicsSounds()
     {
         foreach (Sound sound in soundMusics)
         {
@@ -90,12 +92,44 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-	public void StopAllEffectsSounds()
+    public void StopAllEffectsSounds()
+    {
+        foreach (Sound sound in soundEffects)
+        {
+            sound.source.Stop();
+        }
+    }
+
+	//Simulates 3 different sounds as a single one with the duration you desire
+	//Repeats the middle sound to fit the duration passed
+	public void PlayDynamicSound(string startSound, string middleSound, string endSound, float totalDurationSeconds)
 	{
-		foreach (Sound sound in soundEffects)
-		{
-			sound.source.Stop();
-		}
+        Play(startSound);
+		Sound startSoundSource = GetSound(startSound);
+		Sound middleSoundSource = GetSound(middleSound);
+		Sound endSoundSource = GetSound(endSound);
+
+		float middleSoundDurationSeconds = totalDurationSeconds - startSoundSource.clip.length - endSoundSource.clip.length;
+
+		StartCoroutine(PlayMiddleSound(middleSoundSource, endSoundSource, middleSoundDurationSeconds, startSoundSource.clip.length));
 	}
+
+    IEnumerator PlayMiddleSound(Sound middleSoundSource, Sound endSoundSource, float middleSoundDurationTime, float startSoundDurationTime)
+    {
+        float middleSoundClipTime = middleSoundSource.clip.length;
+
+        if (startSoundDurationTime != 0)
+            yield return new WaitForSeconds(startSoundDurationTime);
+
+        while (middleSoundDurationTime >= middleSoundClipTime / 2)
+        {
+            Play(middleSoundSource.name);
+            yield return new WaitForSeconds(middleSoundClipTime);
+            middleSoundDurationTime -= middleSoundClipTime;
+        }
+
+		Play(endSoundSource.name);
+    }
+
 
 }

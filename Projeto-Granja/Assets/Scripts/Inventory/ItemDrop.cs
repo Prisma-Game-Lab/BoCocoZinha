@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ItemDrop : MonoBehaviour
 {
+    public string entityType;
     public GameObject[] itemDropado;
-    
-
+   
 
     public void DropItem()
     {

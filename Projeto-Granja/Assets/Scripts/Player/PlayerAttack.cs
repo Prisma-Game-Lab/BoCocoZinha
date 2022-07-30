@@ -58,7 +58,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(canNormalAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
-            Attack(normalDamage, normalCooldown); 
+            Attack(normalDamage, false); 
             StartCoroutine(NormalCooldown(normalCooldown));
         }
     }
@@ -79,12 +79,12 @@ public class PlayerAttack : MonoBehaviour
     {
         if(canChargedAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
-            Attack(chargedDamage, chargedCooldown);
+            Attack(chargedDamage, true);
             StartCoroutine(ChargedCooldown(chargedCooldown));
         }
     }
 
-    private void Attack(int damage, float cooldown)
+    private void Attack(int damage, bool isChargedAttack)
     {
         animator.SetTrigger(animAttack);
         animatorAttackPoint.SetTrigger(animAttack);
@@ -92,8 +92,13 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
         StartCoroutine(MovementStop());
 
-        if(hitEnemies.Length==0)
-            AudioManager.instance.Play("miss_hit");
+        if (hitEnemies.Length == 0)
+        {
+            if (isChargedAttack)
+                AudioManager.instance.Play("miss_hit");
+            else
+                AudioManager.instance.Play("miss_hit");
+        }
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -102,12 +107,23 @@ public class PlayerAttack : MonoBehaviour
             if(enemy.CompareTag("Enemy"))
             {
                 StartCoroutine(KnockBack(enemy.gameObject));
-                enemy.GetComponent<EnemyStats>().TakeDamage(damage);
+                enemy.GetComponent<EnemyStats>().TakeDamage(damage, isChargedAttack);
             }
             else
             {
                 Destroy(enemy.gameObject);
-                enemy.GetComponent<ItemDrop>().DropItem();
+                ItemDrop entity = enemy.GetComponent<ItemDrop>();
+                entity.DropItem();
+                if (entity.entityType == "box")
+                {
+                    string[] sounds = { "box_breaking_1", "box_breaking_2", "box_breaking_3" };
+                    AudioManager.instance.playMultipleRandomSounds(sounds);
+                }
+                else if(entity.entityType == "plant")
+                {
+                    string[] sounds = { "gather_plants_1", "gather_plants_2"};
+                    AudioManager.instance.playMultipleRandomSounds(sounds);
+                }
             }
         }
     }

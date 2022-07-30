@@ -24,46 +24,32 @@ public class EnemyStats : MonoBehaviour
         //hpEnemyText.text = "Enemy Health: " + health.ToString();
 
     }
-    //TODO: Criar fun��o dinamica pra nao ficar repetindo c�digo
-    private void playDamageSound()
-    {
-        string soundType1, soundType2;
-        soundType1 = "enemy_damage_1";
-        soundType2 = "enemy_damage_2";
 
-        int index = Random.Range(0, 3);
-        if (index == 0)
-            AudioManager.instance.Play(soundType1);
+    private void playEnemyDamageSound(bool isChargedAttack)
+    {
+        string[] sounds = { "enemy_damage_1", "enemy_damage_2" };
+        AudioManager.instance.playMultipleRandomSounds(sounds);
+        if (isChargedAttack)
+            AudioManager.instance.Play("enemy_chargedhit_feedback");
         else
-        {
-            AudioManager.instance.Play(soundType2);
-        }
+            AudioManager.instance.Play("enemy_hit_feedback");
+    }
+
+    private void playEnemyDeadSound()
+    {
+        string[] sounds = { "enemy_dead_1", "enemy_dead_2" };
+        AudioManager.instance.playMultipleRandomSounds(sounds);
         AudioManager.instance.Play("enemy_hit_feedback");
     }
-    //TODO: Criar fun��o dinamica pra nao ficar repetindo c�digo
-    private void playDeadSound()
-    {
-        string soundType1, soundType2;
-        soundType1 = "enemy_dead_1";
-        soundType2 = "enemy_dead_2";
 
-        int index = Random.Range(0, 2);
-        if (index == 0)
-            AudioManager.instance.Play(soundType1);
-        else
-        {
-            AudioManager.instance.Play(soundType2);
-        }
-    }
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool isChargedAttack)
     {
-        playDamageSound();
+        playEnemyDamageSound(isChargedAttack);
         health -= damage;
 
         if (health <= 0)
         {
-            playDeadSound();
+            playEnemyDeadSound();
             GetComponent<ItemDrop>().DropItem();
             Destroy(gameObject);
         }

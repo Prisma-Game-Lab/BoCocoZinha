@@ -124,5 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bff96e372385094eab2183e58de3893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: plant
   itemDropado:
   - {fileID: 4104763287188968207, guid: 5b9d92d80c75c534ba38505953e433dc, type: 3}

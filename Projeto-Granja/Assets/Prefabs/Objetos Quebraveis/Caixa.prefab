@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bff96e372385094eab2183e58de3893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: box
   itemDropado:
   - {fileID: 4104763287188968207, guid: a4c5b723832f3c848a2409245339d429, type: 3}
   - {fileID: 4104763287188968207, guid: 1c697ed7dccec2c46a968a3aee0b3d69, type: 3}

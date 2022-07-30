@@ -153,4 +153,19 @@ public class EnemyMovement : MonoBehaviour
         
         rb.MovePosition(rb.position + movVector * stats.speed/1.5f * Time.fixedDeltaTime);
     }
+
+    public void playEnemyStepSound()
+    {
+        string[] sounds = { "enemy_footstep_1", "enemy_footstep_2", "enemy_footstep_3" };
+        AudioManager.instance.playMultipleRandomSounds(sounds);
+    }
+    /*
+    private IEnumerator EnemyStepSoundCooldown(float cooldown)
+    {
+        canPlayStep = false;
+
+        yield return new WaitForSeconds(cooldown);
+
+        canPlayStep = true;
+    }*/
 }
