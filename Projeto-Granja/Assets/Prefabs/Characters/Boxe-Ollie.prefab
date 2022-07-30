@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 6650769901132142358}
   - component: {fileID: 2895163354527308934}
   - component: {fileID: 1093655319255700202}
+  - component: {fileID: 4254023410303155719}
   m_Layer: 3
   m_Name: Boxe-Ollie
   m_TagString: Enemy
@@ -141,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 0584f52d9c9f98f4fb695ec69cc75311, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c59c51c423181384a9aeb6da3f2b2b14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -257,3 +258,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDropado:
   - {fileID: 4104763287188968207, guid: a86af1ea052533342bf7f15379f06cda, type: 3}
+--- !u!95 &4254023410303155719
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838281694477377664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a75f3bdaeaf6ad41ad578180f301215, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -23,6 +23,8 @@ public class EnemyMovement : MonoBehaviour
     public bool knockback;
     public float followTreshold;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,8 @@ public class EnemyMovement : MonoBehaviour
         moved[2] = 0; //left
         moved[3] = 0; //right
 
+        animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -54,12 +58,16 @@ public class EnemyMovement : MonoBehaviour
             if (attacking && player != null) 
             {
                 ChasePlayer();
+                animator.SetBool("Walking", true);
             } 
             else if(!isAttacking)
             {
                 PatrolMovement();
+                animator.SetBool("Walking", true);
             }
         }
+
+        animator.SetBool("Walking", false);
     }
 
 

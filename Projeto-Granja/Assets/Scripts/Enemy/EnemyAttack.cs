@@ -12,11 +12,13 @@ public class EnemyAttack : MonoBehaviour
     //public Transform attackPoint;
     public LayerMask playerLayer;
     private AudioManager audioManager;
+    private Animator animator;
 
     private void Start() 
     {
         canAttack = true;
         audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
+        animator = GetComponent<Animator>();
     }
 
     public IEnumerator Attack(int damage, Vector3 attackPoint)
@@ -41,10 +43,12 @@ public class EnemyAttack : MonoBehaviour
     private IEnumerator MovementStop()
     {
         GetComponent<EnemyMovement>().isAttacking = true;
+        animator.SetBool("Attacking", true);
 
         yield return new WaitForSeconds(attackTime + attackWindup);
 
         GetComponent<EnemyMovement>().isAttacking = false;
+        animator.SetBool("Attacking", false);
     }
 
     private IEnumerator AttackCooldown()
