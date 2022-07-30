@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Backstory.unity
     guid: df5d9449eaf058049870b332a05847c1
   - enabled: 1
+    path: Assets/Scenes/Grange.unity
+    guid: 35e21f83f8f0df941b4ce631adced446
+  - enabled: 1
     path: Assets/Scenes/Playtest/Playtest Scene.unity
     guid: 5a951efdf9d594842ac32b4bca3a4ccd
   - enabled: 1

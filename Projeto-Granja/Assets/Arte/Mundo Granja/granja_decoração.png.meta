@@ -1,0 +1,631 @@
+fileFormatVersion: 2
+guid: c2ab618c3cd3caa4590c3aa1f30405fb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_0"
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1344
+        width: 95
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a897ee486830d4dac50867e25cfb97
+      internalID: 1122238293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_1"
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1333
+        width: 225
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77008e51287da9a418e86a2d257c918e
+      internalID: 634298038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_2"
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1081
+        width: 260
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9237e1c20014764429b4f155de6c23f5
+      internalID: -1073785142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_3"
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 1322
+        width: 92
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e75af3cd822ec94fab7d3aa64538ee2
+      internalID: 1576134568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_4"
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1146
+        width: 267
+        height: 306
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8463d07fbfa664d9c2c116e41f4bae
+      internalID: -1717838889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_5"
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1322
+        width: 91
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8408e0ab5078cd546b2b4d7fe0bb971a
+      internalID: -520256899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_7"
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 1157
+        width: 252
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e10302d98aba0449b36b8491f77637
+      internalID: 1020498722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_8"
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 1078
+        width: 231
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddbc806f2b2259408708d25a603fb16
+      internalID: -1401431064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_9"
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1113
+        width: 145
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079ace1e86147f04fa8aff922705b9c8
+      internalID: 942305177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_11"
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 958
+        width: 139
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4199544a76e8ad34aa2148ea49d37ee1
+      internalID: -690673827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_14"
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1063
+        width: 93
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2016898c4be44d245be68b6512a87e0d
+      internalID: 1744328870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_16"
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 954
+        width: 131
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3396a3ee32d3442966f32d3efc8ef0
+      internalID: -486807654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_17"
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 958
+        width: 141
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111dd8faf056c59438eb209d82345bbf
+      internalID: 96465469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_18"
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 574
+        width: 130
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5932619627f15c4b839aac21cdfcc3e
+      internalID: -509768327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_20"
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 257
+        width: 155
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65a528e48783ff4cb2ed8c9846c64c3
+      internalID: -176761089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_21"
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 295
+        width: 136
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04552a691dbdf764896b49202853ae71
+      internalID: -864245373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_22"
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 420
+        width: 130
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a79bde73db69de4996989ef97c12a84
+      internalID: 1313913081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_24"
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 386
+        width: 130
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bc412aff6ebee468e69879a5fbc6b6
+      internalID: 19369146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_25"
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 270
+        width: 258
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8827097cb08e84f99c5aea0e399d5b
+      internalID: 665896226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_6"
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 960
+        width: 142
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4eef2a13a82fc41a08eaffacc02545
+      internalID: -1268826211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_10"
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 257
+        width: 140
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73268f38b91d45543941974704908123
+      internalID: -2099402129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_12"
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 511
+        width: 140
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c53c65caa9ca4a4397244e5519f4393
+      internalID: -121827674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "granja_decora\xE7\xE3o_13"
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 388
+        width: 23
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f846cb3d9b26bc4b87ca81e8d1c4093
+      internalID: 2073961308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "granja_decora\xE7\xE3o_8": -1401431064
+      "granja_decora\xE7\xE3o_21": -864245373
+      "granja_decora\xE7\xE3o_1": 634298038
+      "granja_decora\xE7\xE3o_11": -690673827
+      "granja_decora\xE7\xE3o_22": 1313913081
+      "granja_decora\xE7\xE3o_3": 1576134568
+      "granja_decora\xE7\xE3o_6": -1268826211
+      "granja_decora\xE7\xE3o_13": 2073961308
+      "granja_decora\xE7\xE3o_2": -1073785142
+      "granja_decora\xE7\xE3o_23": 1053004336
+      "granja_decora\xE7\xE3o_16": -486807654
+      "granja_decora\xE7\xE3o_0": 1122238293
+      "granja_decora\xE7\xE3o_9": 942305177
+      "granja_decora\xE7\xE3o_18": -509768327
+      "granja_decora\xE7\xE3o_19": -1894622290
+      "granja_decora\xE7\xE3o_20": -176761089
+      "granja_decora\xE7\xE3o_15": -755972522
+      "granja_decora\xE7\xE3o_4": -1717838889
+      "granja_decora\xE7\xE3o_17": 96465469
+      "granja_decora\xE7\xE3o_5": -520256899
+      "granja_decora\xE7\xE3o_12": -121827674
+      "granja_decora\xE7\xE3o_7": 1020498722
+      "granja_decora\xE7\xE3o_24": 19369146
+      "granja_decora\xE7\xE3o_14": 1744328870
+      "granja_decora\xE7\xE3o_10": -2099402129
+      "granja_decora\xE7\xE3o_25": 665896226
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
