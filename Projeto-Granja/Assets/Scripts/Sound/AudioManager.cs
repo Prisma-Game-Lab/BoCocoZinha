@@ -7,7 +7,8 @@ public class AudioManager : MonoBehaviour
 
 	//public AudioMixerGroup mixerGroup;
 
-	public Sound[] sounds;
+	public Sound[] soundMusics;
+	public Sound[] soundEffects;
 	public static AudioManager instance;
 
 	void Awake()
@@ -21,7 +22,15 @@ public class AudioManager : MonoBehaviour
 		}
 		DontDestroyOnLoad(gameObject);
 
-		foreach (Sound s in sounds)
+		foreach (Sound s in soundMusics)
+		{
+			s.source = gameObject.AddComponent<AudioSource>();
+			s.source.clip = s.clip;
+			s.source.loop = s.loop;
+
+			s.source.outputAudioMixerGroup = s.mixerGroup;
+		}
+		foreach (Sound s in soundEffects)
 		{
 			s.source = gameObject.AddComponent<AudioSource>();
 			s.source.clip = s.clip;
@@ -33,10 +42,17 @@ public class AudioManager : MonoBehaviour
 
 	public void Play(string sound)
 	{
-		Sound s = Array.Find(sounds, item => item.name == sound);
+		Sound s = Array.Find(soundMusics, item => item.name == sound);
+        if (s != null)
+        {
+            s.source.Play();
+            return;
+        }
+
+		s = Array.Find(soundEffects, sound => sound.name == name);
 		if (s == null)
 		{
-			Debug.LogWarning("Sound: " + sound + " not found!");
+			Debug.LogWarning("Sound: " + name + " not found!");
 			return;
 		}
 
@@ -44,6 +60,47 @@ public class AudioManager : MonoBehaviour
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
 
 		s.source.Play();
+	}
+
+	public void StopSpecificSound(string name)
+	{
+		Sound s = Array.Find(soundMusics, sound => sound.name == name);
+		if (s != null)
+		{
+			s.source.Stop();
+			return;
+		}
+		s = Array.Find(soundEffects, sound => sound.name == name);
+		if (s == null)
+		{
+			Debug.LogWarning("Sound: " + name + " not found!");
+			return;
+		}
+		s.source.Stop();
+	}
+
+    public void StopAllMusicSounds()
+    {
+        foreach (Sound sound in soundMusics)
+        {
+            sound.source.Stop();
+        }
+    }
+
+	public void StopAllEffectsSounds()
+	{
+		foreach (Sound sound in soundEffects)
+		{
+			sound.source.Stop();
+		}
+	}
+
+	public void UpdateSoundVolumes()
+	{
+		foreach (Sound s in soundMusics)
+			s.source.volume = PlayerPrefs.GetFloat("BackgroundPrefs") * PlayerPrefs.GetFloat("MasterSoundPrefs") * 0.0001f;
+		foreach (Sound s in soundEffects)
+			s.source.volume = PlayerPrefs.GetFloat("SoundEffectsPrefs") * PlayerPrefs.GetFloat("MasterSoundPrefs") * 0.0001f;
 	}
 
 }
