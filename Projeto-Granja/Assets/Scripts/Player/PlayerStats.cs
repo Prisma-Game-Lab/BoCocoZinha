@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -34,15 +35,22 @@ public class PlayerStats : MonoBehaviour
         invincible = false;
         invincibleTimer = -1;
         audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
-        slider = GameObject.FindGameObjectWithTag("HPBar").GetComponent<Slider>();
-        SetMaxValue(health);
+        if(SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            slider = GameObject.FindGameObjectWithTag("HPBar").GetComponent<Slider>();
+            SetMaxValue(health);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateInvincible();
-        CheckHealth();
+
+        if(slider)
+        {
+            CheckHealth();
+        }
     }
 
     private void UpdateInvincible()
