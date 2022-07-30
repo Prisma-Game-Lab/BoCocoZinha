@@ -243,8 +243,10 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
+  ps: {fileID: 8341791870117226725}
   attackTime: 0.3
   isAttacking: 0
+  isCharging: 0
 --- !u!95 &468043138844800554
 Animator:
   serializedVersion: 4
@@ -278,7 +280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _player: {fileID: 0}
   isOnPlayer: 0
 --- !u!1 &1978408524947040334
 GameObject:

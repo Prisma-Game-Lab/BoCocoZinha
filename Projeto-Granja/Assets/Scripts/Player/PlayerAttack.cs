@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     private bool canNormalAttack;
     private bool canChargedAttack;
     private Animator animator;
+    public ParticleSystem ps;
     
     //Animator hashes
     private int animAttack = Animator.StringToHash("Attack");
@@ -72,6 +73,7 @@ public class PlayerAttack : MonoBehaviour
     {
         StopCoroutine(Charging());
         isCharging = false;
+        ps.Stop();
     }
 
     public void OnChargedAttack() 
@@ -157,10 +159,12 @@ public class PlayerAttack : MonoBehaviour
     {
         isCharging = true;
         animator.SetBool(animMoving, false);
+        ps.Play();
 
         yield return new WaitForSeconds(1.0f);
 
         isCharging = false;
+        ps.Stop();
     }
 
     private void OnDrawGizmosSelected() 
