@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 8
-  attack: 17
+  attack: 13
   defense: 0
   speed: 2
 --- !u!114 &6650769901132142358
@@ -224,7 +224,7 @@ MonoBehaviour:
   stats: {fileID: 1859986384433715524}
   player: {fileID: 0}
   knockback: 0
-  followTreshold: 2
+  followTreshold: 1.55
 --- !u!114 &2895163354527308934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 1
-  attackWindup: 0.5
+  attackWindup: 1.5
   attackTime: 0.3
   attackCooldown: 3
   playerLayer:

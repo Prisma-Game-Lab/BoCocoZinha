@@ -178,7 +178,7 @@ MonoBehaviour:
   movX: 0
   movY: 0
   movementDeadzone: 0.1
-  dashCooldownTimer: 0.5
+  dashCooldownTimer: 0.4
   dashingSpeed: 20
   dashingDuration: 0.2
   isDashing: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtbox: {fileID: 1862722827267760370}
   stats: {fileID: 8802042020424164534}
+  collisionDamage: 2
 --- !u!114 &8802042020424164534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalCooldown: 0.3
   normalDamage: 2
-  chargedCooldown: 1.5
+  chargedCooldown: 1
   chargedDamage: 10
   range: 0.5
   distance: 5

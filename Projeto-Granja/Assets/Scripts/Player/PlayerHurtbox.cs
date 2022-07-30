@@ -6,6 +6,7 @@ public class PlayerHurtbox : MonoBehaviour
 {
     public Collider2D hurtbox;
     public PlayerStats stats;
+    public int collisionDamage;
     private AudioManager audioManager;
     private PlayerMovement playerMovement;
 
@@ -22,7 +23,7 @@ public class PlayerHurtbox : MonoBehaviour
             if (stats.invincible == false && playerMovement.isDashing == false)
             {
                 audioManager.Play("player_hit");
-                stats.health--;
+                stats.health -= collisionDamage;
                 stats.invincible = true;
             }
         }
