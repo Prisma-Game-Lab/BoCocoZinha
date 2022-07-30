@@ -2461,8 +2461,8 @@ MonoBehaviour:
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
   - name: collect_item
-    clip: {fileID: 8300000, guid: abc9f1a20a9fdd340a5bc68b85c95b1f, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 5472ff6b595b645498af0101da900beb, type: 3}
+    volume: 0.7
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -3084,6 +3084,7 @@ MonoBehaviour:
   musicName:
   - menu_music
   stopOtherMusics: 1
+  stopEffects: 1
 --- !u!1 &1676947875
 GameObject:
   m_ObjectHideFlags: 0
