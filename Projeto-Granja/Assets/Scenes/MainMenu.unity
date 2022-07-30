@@ -2245,7 +2245,7 @@ MonoBehaviour:
   soundMusics:
   - name: credits_music
     clip: {fileID: 8300000, guid: 09397b32a3bd70945a8d2e232c26598e, type: 3}
-    volume: 1
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2254,7 +2254,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: boss_music
     clip: {fileID: 8300000, guid: ae4e1aec211dd8b498e389a684a6786f, type: 3}
-    volume: 1
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2263,7 +2263,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: game_music
     clip: {fileID: 8300000, guid: 66eb4dbef6114c64aae46d65edeaabd9, type: 3}
-    volume: 1
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2272,7 +2272,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: menu_music
     clip: {fileID: 8300000, guid: 63e292bebf12697448fc24d0d60848fb, type: 3}
-    volume: 1
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2325,6 +2325,15 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
+  - name: player_dash
+    clip: {fileID: 8300000, guid: 36261144ba254c044b1876f0c6718a76, type: 3}
+    volume: 0.3
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
   - name: miss_hit
     clip: {fileID: 8300000, guid: 145393c3cef1feb46a672e6ded5dd6ed, type: 3}
     volume: 1
@@ -2352,18 +2361,9 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
-  - name: player_dash
-    clip: {fileID: 8300000, guid: 36261144ba254c044b1876f0c6718a76, type: 3}
-    volume: 0.3
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 0
-    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
-    source: {fileID: 0}
   - name: enemy_hit_feedback
     clip: {fileID: 8300000, guid: 60799ece157366940abbb35a841fc358, type: 3}
-    volume: 0.5
+    volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2372,7 +2372,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_dead_1
     clip: {fileID: 8300000, guid: 282f41d03074585489cde649de7c24f9, type: 3}
-    volume: 1
+    volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2381,7 +2381,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_dead_2
     clip: {fileID: 8300000, guid: 9263a1ebbbbf75b45b68c3748df6e83f, type: 3}
-    volume: 1
+    volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2390,7 +2390,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_damage_1
     clip: {fileID: 8300000, guid: c8923f62e0369234eaa20050cba303ec, type: 3}
-    volume: 1
+    volume: 0.7
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2399,7 +2399,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_damage_2
     clip: {fileID: 8300000, guid: 7edb8ab634a34214383d582ef3cf4a31, type: 3}
-    volume: 1
+    volume: 0.7
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2453,6 +2453,15 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ambience_swamp
     clip: {fileID: 8300000, guid: e11171f5f39edfa479b45d20cfaf41f2, type: 3}
+    volume: 0.7
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: collect_item
+    clip: {fileID: 8300000, guid: 857b61962c8c18a408a82cce46560be9, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -3073,7 +3082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicName:
-  - player_dead
+  - menu_music
   stopOtherMusics: 1
 --- !u!1 &1676947875
 GameObject:
