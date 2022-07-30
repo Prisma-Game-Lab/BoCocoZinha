@@ -2372,7 +2372,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_dead_1
     clip: {fileID: 8300000, guid: 282f41d03074585489cde649de7c24f9, type: 3}
-    volume: 0.8
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2381,7 +2381,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_dead_2
     clip: {fileID: 8300000, guid: 9263a1ebbbbf75b45b68c3748df6e83f, type: 3}
-    volume: 0.8
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2390,7 +2390,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_damage_1
     clip: {fileID: 8300000, guid: c8923f62e0369234eaa20050cba303ec, type: 3}
-    volume: 0.7
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2399,7 +2399,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_damage_2
     clip: {fileID: 8300000, guid: 7edb8ab634a34214383d582ef3cf4a31, type: 3}
-    volume: 0.7
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
