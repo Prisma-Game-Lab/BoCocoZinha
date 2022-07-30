@@ -2627,9 +2627,18 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
+  - name: enemy_chargedhit_feedback
+    clip: {fileID: 8300000, guid: 11c8cf1ce1c62b040afb12cb96836897, type: 3}
+    volume: 0.7
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
   - name: enemy_dead_1
     clip: {fileID: 8300000, guid: 282f41d03074585489cde649de7c24f9, type: 3}
-    volume: 0.5
+    volume: 0.4
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2638,7 +2647,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_dead_2
     clip: {fileID: 8300000, guid: 9263a1ebbbbf75b45b68c3748df6e83f, type: 3}
-    volume: 0.5
+    volume: 0.4
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2647,7 +2656,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_damage_1
     clip: {fileID: 8300000, guid: c8923f62e0369234eaa20050cba303ec, type: 3}
-    volume: 0.5
+    volume: 0.4
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0.2
@@ -2656,19 +2665,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_damage_2
     clip: {fileID: 8300000, guid: 7edb8ab634a34214383d582ef3cf4a31, type: 3}
-    volume: 0.5
+    volume: 0.4
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0.2
-    loop: 0
-    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
-    source: {fileID: 0}
-  - name: enemy_chargedhit_feedback
-    clip: {fileID: 8300000, guid: 11c8cf1ce1c62b040afb12cb96836897, type: 3}
-    volume: 1
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
@@ -2800,7 +2800,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: gather_plants_1
     clip: {fileID: 8300000, guid: 170626c2d699dde4ca19f17db97348df, type: 3}
-    volume: 1
+    volume: 0.7
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2827,7 +2827,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: box_breaking_2
     clip: {fileID: 8300000, guid: 9232dfe3804fe3944be4b8094f88fd62, type: 3}
-    volume: 1
+    volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2836,7 +2836,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: box_breaking_3
     clip: {fileID: 8300000, guid: d302887b788f8544795068a557dafe1f, type: 3}
-    volume: 1
+    volume: 0.7
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0

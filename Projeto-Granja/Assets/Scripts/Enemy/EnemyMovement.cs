@@ -65,9 +65,8 @@ public class EnemyMovement : MonoBehaviour
                 PatrolMovement();
                 animator.SetBool("Walking", true);
             }
-        }
-
-        animator.SetBool("Walking", false);
+        }else
+            animator.SetBool("Walking", false);
     }
 
 
@@ -153,12 +152,13 @@ public class EnemyMovement : MonoBehaviour
         
         rb.MovePosition(rb.position + movVector * stats.speed/1.5f * Time.fixedDeltaTime);
     }
-
+    /*
     public void playEnemyStepSound()
     {
         string[] sounds = { "enemy_footstep_1", "enemy_footstep_2", "enemy_footstep_3" };
+        print("foi");
         AudioManager.instance.playMultipleRandomSounds(sounds);
-    }
+    }*/
     /*
     private IEnumerator EnemyStepSoundCooldown(float cooldown)
     {
