@@ -42,14 +42,17 @@ public class AudioManager : MonoBehaviour
 
 	public void Play(string sound)
 	{
-		Sound s = Array.Find(soundMusics, item => item.name == sound);
-        if (s != null)
-        {
-            s.source.Play();
-            return;
-        }
 
-		s = Array.Find(soundEffects, sound => sound.name == name);
+		Sound s = Array.Find(soundMusics, item => item.name == sound);
+		if (s != null)
+		{
+			s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+			s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+			s.source.Play();
+			return;
+		}
+
+		s = Array.Find(soundEffects, item => item.name == sound);
 		if (s == null)
 		{
 			Debug.LogWarning("Sound: " + name + " not found!");
@@ -57,7 +60,7 @@ public class AudioManager : MonoBehaviour
 		}
 
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
-		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+        s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
 
 		s.source.Play();
 	}
@@ -93,14 +96,6 @@ public class AudioManager : MonoBehaviour
 		{
 			sound.source.Stop();
 		}
-	}
-
-	public void UpdateSoundVolumes()
-	{
-		foreach (Sound s in soundMusics)
-			s.source.volume = PlayerPrefs.GetFloat("BackgroundPrefs") * PlayerPrefs.GetFloat("MasterSoundPrefs") * 0.0001f;
-		foreach (Sound s in soundEffects)
-			s.source.volume = PlayerPrefs.GetFloat("SoundEffectsPrefs") * PlayerPrefs.GetFloat("MasterSoundPrefs") * 0.0001f;
 	}
 
 }

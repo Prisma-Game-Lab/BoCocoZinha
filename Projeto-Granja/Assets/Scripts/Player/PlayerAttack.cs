@@ -58,7 +58,6 @@ public class PlayerAttack : MonoBehaviour
     {
         if(canNormalAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
-            AudioManager.instance.Play("miss_hit");
             Attack(normalDamage, normalCooldown); 
             StartCoroutine(NormalCooldown(normalCooldown));
         }
@@ -92,6 +91,9 @@ public class PlayerAttack : MonoBehaviour
         
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
         StartCoroutine(MovementStop());
+
+        if(hitEnemies.Length==0)
+            AudioManager.instance.Play("miss_hit");
 
         foreach (Collider2D enemy in hitEnemies)
         {

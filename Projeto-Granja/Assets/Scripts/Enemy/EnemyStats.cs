@@ -38,6 +38,7 @@ public class EnemyStats : MonoBehaviour
         {
             AudioManager.instance.Play(soundType2);
         }
+        AudioManager.instance.Play("enemy_hit_feedback");
     }
     //TODO: Criar fun��o dinamica pra nao ficar repetindo c�digo
     private void playDeadSound()

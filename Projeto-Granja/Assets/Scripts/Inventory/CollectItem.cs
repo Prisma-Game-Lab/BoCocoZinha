@@ -8,6 +8,7 @@ public class CollectItem : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            AudioManager.instance.Play("collect_item");
             Destroy(gameObject);
         }    
     }

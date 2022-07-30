@@ -14,6 +14,7 @@ public class PlaySceneSounds : MonoBehaviour
         foreach (string item in musicName)
         {
             AudioManager.instance.Play(item);
-        } 
+        }
+        
     }
 }
