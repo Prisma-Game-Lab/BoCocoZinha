@@ -124,8 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bff96e372385094eab2183e58de3893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDropado: {fileID: 1058380602464207457, guid: a86506295504d6948ace97e1517512ec, type: 3}
-  itemSprites:
-  - {fileID: 21300000, guid: fd93aab34390cfd4b806b8877d6e0626, type: 3}
-  - {fileID: 21300000, guid: 6c6b22f7a88246d438e098e96e366dc2, type: 3}
-  - {fileID: 21300000, guid: 0ce6a955ad3f12a4586f6739abff5474, type: 3}
+  itemDropado:
+  - {fileID: 4104763287188968207, guid: a4c5b723832f3c848a2409245339d429, type: 3}
+  - {fileID: 4104763287188968207, guid: 1c697ed7dccec2c46a968a3aee0b3d69, type: 3}
+  - {fileID: 4104763287188968207, guid: b731b99668848914bbf356cea3f6359a, type: 3}
