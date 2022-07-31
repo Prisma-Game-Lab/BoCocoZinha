@@ -53,6 +53,11 @@ public class EnemyMovement : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
+        if(animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
+
         if(!knockback)
         {
             if (attacking && player != null) 
