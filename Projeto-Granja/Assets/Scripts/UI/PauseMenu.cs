@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     public static bool paused = false;
-    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject generalPanel;
+    [SerializeField] private GameObject inventoryMenuUI;
     [SerializeField] private GameObject settingsMenuUI;
 
     [SerializeField] private GameObject player;
@@ -29,9 +30,35 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    void OnInventory()
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        if(paused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            generalPanel.SetActive(true);
+            inventoryMenuUI.SetActive(true);
+            Time.timeScale = 0.0f;
+            paused = true;
+
+            if(player != null)
+            {
+                player.GetComponent<PlayerInput>().enabled = false;
+            }
+        }
+    }
+
     public void PauseGame()
     {
-        pauseMenuUI.SetActive(true);
+        generalPanel.SetActive(true);
+        settingsMenuUI.SetActive(true);
         Time.timeScale = 0.0f;
         paused = true;
 
@@ -43,8 +70,9 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        pauseMenuUI.SetActive(false);
+        inventoryMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
+        generalPanel.SetActive(false);
         Time.timeScale = 1.0f;
         paused = false;
 

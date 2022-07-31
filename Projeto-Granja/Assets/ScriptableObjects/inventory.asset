@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: inventory
   m_EditorClassIdentifier: 
   strawberryCount: 0
-  cornCount: 0
-  carrotCount: 0
+  cornCount: 1
+  carrotCount: 1
   beetCount: 0
-  brocolliCount: 0
-  wheatCount: 0
-  supCount: 0
-  pumpkinCount: 0
+  brocolliCount: 12
+  wheatCount: 2
+  supCount: 2
+  pumpkinCount: 2
   bananaCount: 0
   cakeCount: 0
   rationCount: 0

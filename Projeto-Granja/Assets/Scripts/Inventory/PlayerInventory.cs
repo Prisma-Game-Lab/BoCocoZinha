@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInventory : MonoBehaviour
 {
     public Inventory inventory;
+
     public void AddToInventory(Item item)
     {
         switch (item.type)
@@ -40,19 +42,42 @@ public class PlayerInventory : MonoBehaviour
                 break;
         }
     }
+
     public void Cook(string recipe)
     {
         if (recipe=="Cake")
         {
+            inventory.bananaCount--;
+            inventory.wheatCount--;
+            inventory.strawberryCount--;
             inventory.cakeCount++;
         }
         else if (recipe=="Ration")
         {
+            inventory.cornCount--;
+            inventory.carrotCount--;
+            inventory.brocolliCount--;
             inventory.rationCount++;
         }
         else
         {
+            inventory.supCount--;
+            inventory.beetCount--;
+            inventory.pumpkinCount--;
             inventory.seboCount++;
+        }
+    }
+
+    public void UseItem(string item)
+    {
+        if(item == "Ration")
+        {
+            inventory.rationCount--;
+        }
+        else
+        {
+            inventory.seboCount--;
+            SceneManager.LoadScene(2);
         }
     }
 }
