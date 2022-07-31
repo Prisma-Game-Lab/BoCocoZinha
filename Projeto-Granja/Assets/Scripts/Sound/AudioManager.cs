@@ -70,10 +70,10 @@ public class AudioManager : MonoBehaviour
 	}
 
 	//Play one of the sounds randonly
-	public void playMultipleRandomSounds(string[] sound)
+	public void playMultipleRandomSounds(string[] sounds)
 	{
-		int index = UnityEngine.Random.Range(0, sound.Length);
-		Play(sound[index]);
+		int index = UnityEngine.Random.Range(0, sounds.Length);
+		Play(sounds[index]);
 	}
 
 

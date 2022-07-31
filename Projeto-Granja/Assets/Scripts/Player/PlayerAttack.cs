@@ -92,12 +92,22 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
         StartCoroutine(MovementStop());
 
+        if(isChargedAttack)
+            AudioManager.instance.Play("swing_charged");
+        else
+        {
+            string[] sounds = { "swing_normal_1", "swing_normal_2", "swing_normal_3" };
+            AudioManager.instance.playMultipleRandomSounds(sounds);
+        }
+
         if (hitEnemies.Length == 0)
         {
             if (isChargedAttack)
-                AudioManager.instance.Play("miss_hit");
+                AudioManager.instance.Play("miss_charged_hit");
             else
-                AudioManager.instance.Play("miss_hit");
+            {
+                AudioManager.instance.Play("miss_normal_hit");
+            }
         }
 
         foreach (Collider2D enemy in hitEnemies)

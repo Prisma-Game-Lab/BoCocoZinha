@@ -2573,9 +2573,54 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
     source: {fileID: 0}
-  - name: miss_hit
+  - name: miss_normal_hit
     clip: {fileID: 8300000, guid: 145393c3cef1feb46a672e6ded5dd6ed, type: 3}
     volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: miss_charged_hit
+    clip: {fileID: 8300000, guid: 73f8d39596a4de643944283c12ac3719, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: swing_normal_1
+    clip: {fileID: 8300000, guid: 1be5c539734c0914ca66e14569cafa13, type: 3}
+    volume: 0.52
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: swing_normal_2
+    clip: {fileID: 8300000, guid: f42e2b245b61bee4fa905c8e16b333b9, type: 3}
+    volume: 0.52
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: swing_normal_3
+    clip: {fileID: 8300000, guid: e37e2545bc2a2184c975744d9de127be, type: 3}
+    volume: 0.52
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
+    source: {fileID: 0}
+  - name: swing_charged
+    clip: {fileID: 8300000, guid: fdee1f2e76aba1740a991ffb20eeea6b, type: 3}
+    volume: 0.55
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2602,7 +2647,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: collect_item
     clip: {fileID: 8300000, guid: 5472ff6b595b645498af0101da900beb, type: 3}
-    volume: 0.55
+    volume: 0.45
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2620,7 +2665,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_hit_feedback
     clip: {fileID: 8300000, guid: 81950326ebe346b4ca2f75b99cc57f17, type: 3}
-    volume: 0.4
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2701,7 +2746,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_swing_1
     clip: {fileID: 8300000, guid: 08579469df34e754882bdef0a229f8ec, type: 3}
-    volume: 1
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2710,7 +2755,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_swing_2
     clip: {fileID: 8300000, guid: 035184a6168fecf439ab5e5da2faf682, type: 3}
-    volume: 1
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2719,7 +2764,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: enemy_swing_3
     clip: {fileID: 8300000, guid: 07ade1c97e25e3a47a61d78c6e4bbbec, type: 3}
-    volume: 1
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2800,7 +2845,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: gather_plants_1
     clip: {fileID: 8300000, guid: 170626c2d699dde4ca19f17db97348df, type: 3}
-    volume: 0.7
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2809,7 +2854,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: gather_plants_2
     clip: {fileID: 8300000, guid: c7338935e1c9b164b861ff03a88931d9, type: 3}
-    volume: 1
+    volume: 0.88
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2818,7 +2863,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: box_breaking_1
     clip: {fileID: 8300000, guid: 2293a1d41a7619c4d9fd700fb5819b70, type: 3}
-    volume: 1
+    volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2827,7 +2872,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: box_breaking_2
     clip: {fileID: 8300000, guid: 9232dfe3804fe3944be4b8094f88fd62, type: 3}
-    volume: 0.8
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2836,7 +2881,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: box_breaking_3
     clip: {fileID: 8300000, guid: d302887b788f8544795068a557dafe1f, type: 3}
-    volume: 0.7
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
