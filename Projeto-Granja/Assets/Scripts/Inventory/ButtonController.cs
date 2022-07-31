@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ButtonController : MonoBehaviour
 {
@@ -14,6 +15,17 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private Button activateRecipe;
     private PlayerInventory pi;
 
+    [SerializeField] private TMP_Text tmpCorn;
+    [SerializeField] private TMP_Text tmpCarrot;
+    [SerializeField] private TMP_Text tmpBrocolli;
+    [SerializeField] private TMP_Text tmpSup;
+    [SerializeField] private TMP_Text tmpBeet;
+    [SerializeField] private TMP_Text tmpPumpkin;
+    [SerializeField] private TMP_Text tmpBanana;
+    [SerializeField] private TMP_Text tmpWheat;
+    [SerializeField] private TMP_Text tmpStrawberry;
+    [SerializeField] private TMP_Text tmpRation;
+    [SerializeField] private TMP_Text tmpSebo;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +37,22 @@ public class ButtonController : MonoBehaviour
     void Update()
     {
         CheckButtons();
+        UpdateInventory();
+    }
+
+    private void UpdateInventory()
+    {
+        tmpCorn.text = pi.inventory.cornCount.ToString();
+        tmpCarrot.text = pi.inventory.carrotCount.ToString();
+        tmpBrocolli.text = pi.inventory.brocolliCount.ToString();
+        tmpSup.text = pi.inventory.supCount.ToString();
+        tmpBeet.text = pi.inventory.beetCount.ToString();
+        tmpPumpkin.text = pi.inventory.pumpkinCount.ToString();
+        tmpBanana.text = pi.inventory.bananaCount.ToString();
+        tmpWheat.text = pi.inventory.wheatCount.ToString();
+        tmpStrawberry.text = pi.inventory.strawberryCount.ToString();
+        tmpRation.text = pi.inventory.rationCount.ToString();
+        tmpSebo.text = pi.inventory.seboCount.ToString();
     }
 
     private void CheckButtons()
