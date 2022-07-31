@@ -6703,7 +6703,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4479530366512811753, guid: 05123a7de185a4e45b8645f78536ec51, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8278ffdd287c8fc418725e3f83e94760, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6712,7 +6712,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1.102713
-  MaxDistance: 7.1250825
+  MaxDistance: 5.623489
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -6722,8 +6722,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.12965788
-      value: 0.773983
+      time: 0.15900053
+      value: 0.7839546
       inSlope: -1.1929244
       outSlope: -1.1929244
       tangentMode: 0
@@ -6731,8 +6731,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0.25386643
     - serializedVersion: 3
-      time: 0.24713951
-      value: 0.27947998
+      time: 0.37355858
+      value: 0.31936646
       inSlope: -0.62620497
       outSlope: -0.62620497
       tangentMode: 0
@@ -6740,8 +6740,8 @@ AudioSource:
       inWeight: 0.6769009
       outWeight: 0
     - serializedVersion: 3
-      time: 0.57479966
-      value: 0.08605957
+      time: 0.61093247
+      value: 0.16247559
       inSlope: -0.3300225
       outSlope: -0.3300225
       tangentMode: 0
@@ -7407,6 +7407,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2231818314241682829, guid: 4397f3fa6a3d4754894132693981bd8a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.099975586
+      objectReference: {fileID: 0}
     - target: {fileID: 6832356404492815017, guid: 4397f3fa6a3d4754894132693981bd8a, type: 3}
       propertyPath: m_Name
       value: Canvas
