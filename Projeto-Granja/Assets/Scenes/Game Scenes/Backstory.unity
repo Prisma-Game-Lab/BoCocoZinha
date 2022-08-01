@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Em um pacato planeta povoado por ranchos e s\xEDtios havia um restaurante
+  m_text: "Em um pacato planeta repleto de ranchos e s\xEDtios havia um restaurante
     familiar, conhecido n\xE3o s\xF3 pela regi\xE3o, mas tamb\xE9m por toda a gal\xE1xia.
     Seu cozinheiro era ningu\xE9m mais, ningu\xE9m menos que Toni Gal\xE3o, o grande
     galo cozinheiro e o querido av\xF4 da fam\xEDlia Galo. \n\nAssim como seus antecessores,
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 32
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
