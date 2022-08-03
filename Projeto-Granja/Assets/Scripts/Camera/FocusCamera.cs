@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FocusCamera : MonoBehaviour
 {
-    private float height;
     public float posX;
     public float posY;
     // Start is called before the first frame update
