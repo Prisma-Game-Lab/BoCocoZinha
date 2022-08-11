@@ -7,6 +7,7 @@ public class PlayerHurtbox : MonoBehaviour
     public Collider2D hurtbox;
     public PlayerStats stats;
     public int collisionDamage;
+    public int laserDamage;
     private AudioManager audioManager;
     private PlayerMovement playerMovement;
 
@@ -27,5 +28,18 @@ public class PlayerHurtbox : MonoBehaviour
                 stats.invincible = true;
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("EnemyAttack"))
+        {
+            if (stats.invincible == false && playerMovement.isDashing == false)
+            {
+                audioManager.Play("player_hit");
+                stats.health -= laserDamage;
+                stats.invincible = true;
+            }
+        }    
     }
 }
