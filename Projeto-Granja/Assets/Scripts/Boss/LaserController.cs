@@ -7,8 +7,10 @@ public class LaserController : MonoBehaviour
 {
 
     public Transform Target;
+    public Transform Player;
     public ParticleSystem ImpactParticles;
     public LineRenderer Line;
+    [SerializeField] private Animator animator;
 
     public bool LaserActive = false;
 
@@ -48,6 +50,7 @@ public class LaserController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Target.position = Player.position;
         Line.SetPosition(1, Target.localPosition);
     }
 
@@ -62,6 +65,7 @@ public class LaserController : MonoBehaviour
         Line.enabled = true;
         Line.widthCurve = AnticipationCurve;
         Line.colorGradient = AnticipationColor;
+        animator.SetInteger("Laser", 1);
         
         yield return new WaitForSeconds(anticipation * 0.9f);
         
@@ -73,11 +77,13 @@ public class LaserController : MonoBehaviour
         Line.widthCurve = LaserCurve;
         Line.colorGradient = LaserColor;
         ImpactParticles.Play();
+        animator.SetInteger("Laser", 2);
         
         yield return new WaitForSeconds(duration);
         
         LaserActive = false;
         Line.enabled = false;
         ImpactParticles.Stop();
+        animator.SetInteger("Laser", 0);
     }
 }
