@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossCyclone : MonoBehaviour
 {
     [SerializeField] private GameObject damageArea;
+    [SerializeField] private Animator animator;
     [SerializeField] private float duration;
     [SerializeField] private int damage;
     [SerializeField] private float damageTimer;
@@ -15,6 +16,7 @@ public class BossCyclone : MonoBehaviour
     void Start()
     {
         baseDamageTimer = damageTimer;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,10 +47,12 @@ public class BossCyclone : MonoBehaviour
     private IEnumerator ActiveTime()
     {
         damageArea.SetActive(true);
+        animator.SetInteger("Cyclone", 1);
 
         yield return new WaitForSeconds(duration);
 
         damageArea.SetActive(false);
+        animator.SetInteger("Cyclone", 0);
 
         if(player.GetComponent<PlayerStats>().inCyclone)
         {
