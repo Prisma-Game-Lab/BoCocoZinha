@@ -599,6 +599,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Recipe",
+                    "type": "Button",
+                    "id": "7149e189-ce8d-4a8f-b5a6-e69ef98caa83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1072,6 +1081,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10290e27-433c-4c40-8c54-e0f4056feff8",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Recipe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
