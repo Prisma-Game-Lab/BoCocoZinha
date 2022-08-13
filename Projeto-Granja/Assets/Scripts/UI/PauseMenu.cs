@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject generalPanel;
     [SerializeField] private GameObject inventoryMenuUI;
     [SerializeField] private GameObject settingsMenuUI;
+    [SerializeField] private GameObject recipeMenuUI;
 
     [SerializeField] private GameObject player;
 
@@ -73,6 +74,7 @@ public class PauseMenu : MonoBehaviour
         inventoryMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
         generalPanel.SetActive(false);
+        recipeMenuUI.SetActive(false);
         Time.timeScale = 1.0f;
         paused = false;
 
