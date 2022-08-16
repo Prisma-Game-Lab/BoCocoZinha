@@ -13,6 +13,8 @@ TagManager:
   - Breakable
   - Virtual Cam
   - HPBar
+  - Loading Screen
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -43,6 +43,14 @@ public class PlayerStats : MonoBehaviour
             SetMaxValue(health);
         }
         maxHealth = health;
+        if(SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            HPManager.currentHP = maxHealth; 
+        }
+        else
+        {
+            health = HPManager.currentHP;
+        }
     }
 
     // Update is called once per frame
@@ -87,6 +95,7 @@ public class PlayerStats : MonoBehaviour
         {
             slider.value = health;
         }
+        HPManager.currentHP = health; 
     }
 
     public void Anchor(float x, float y)
