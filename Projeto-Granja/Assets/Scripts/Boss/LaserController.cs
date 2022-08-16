@@ -11,8 +11,11 @@ public class LaserController : MonoBehaviour
     public ParticleSystem ImpactParticles;
     public LineRenderer Line;
     [SerializeField] private Animator animator;
+    [SerializeField] private BossController bc;
 
     public bool LaserActive = false;
+    private bool searching = true;
+    private Vector3 finalPos;
 
     [Header("Styling")]
     public AnimationCurve AnticipationCurve = new AnimationCurve(new Keyframe(0,0.1f), new Keyframe(1,0.1f));
@@ -45,12 +48,24 @@ public class LaserController : MonoBehaviour
     {
         LaserActive = false;
         Line.enabled = false;
-        ImpactParticles.Stop();
     }
 
     private void FixedUpdate()
     {
-        Target.position = Player.position;
+        if(Player == null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
+        if(searching)
+        {
+            Target.position = Player.position;
+        }
+        else
+        {
+            Target.position = finalPos;
+        }
+
         Line.SetPosition(1, Target.localPosition);
     }
 
@@ -63,6 +78,7 @@ public class LaserController : MonoBehaviour
     {
         LaserActive = true;
         Line.enabled = true;
+        searching = true;
         Line.widthCurve = AnticipationCurve;
         Line.colorGradient = AnticipationColor;
         animator.SetInteger("Laser", 1);
@@ -77,6 +93,8 @@ public class LaserController : MonoBehaviour
         Line.widthCurve = LaserCurve;
         Line.colorGradient = LaserColor;
         ImpactParticles.Play();
+        finalPos = Player.position;
+        searching = false;
         animator.SetInteger("Laser", 2);
         
         yield return new WaitForSeconds(duration);
@@ -85,5 +103,6 @@ public class LaserController : MonoBehaviour
         Line.enabled = false;
         ImpactParticles.Stop();
         animator.SetInteger("Laser", 0);
+        StartCoroutine(bc.AttackCooldown());
     }
 }

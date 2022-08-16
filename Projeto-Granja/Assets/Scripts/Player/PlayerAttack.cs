@@ -112,12 +112,16 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (!enemy.CompareTag("Enemy") && !enemy.CompareTag("Breakable")) return;
+            if (!enemy.CompareTag("Enemy") && !enemy.CompareTag("Breakable") && !enemy.CompareTag("Boss")) return;
 
             if(enemy.CompareTag("Enemy"))
             {
                 StartCoroutine(KnockBack(enemy.gameObject));
                 enemy.GetComponent<EnemyStats>().TakeDamage(damage, isChargedAttack);
+            }
+            else if(enemy.CompareTag("Boss"))
+            {
+                enemy.GetComponent<BossController>().TakeDamage(damage);
             }
             else
             {
