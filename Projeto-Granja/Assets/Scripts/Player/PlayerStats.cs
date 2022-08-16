@@ -13,10 +13,12 @@ public class PlayerStats : MonoBehaviour
     public int speed;
     [HideInInspector] public bool invincible;
     public float invincibilityDuration;
+    public int rationHeal;
 
     public GameObject DeathPanel;
 
     private float invincibleTimer;
+    private int maxHealth;
 
     private AudioManager audioManager;
 
@@ -40,6 +42,7 @@ public class PlayerStats : MonoBehaviour
             slider = GameObject.FindGameObjectWithTag("HPBar").GetComponent<Slider>();
             SetMaxValue(health);
         }
+        maxHealth = health;
     }
 
     // Update is called once per frame
@@ -102,5 +105,17 @@ public class PlayerStats : MonoBehaviour
     {
         slider.maxValue = value;
         slider.value = value;
+    }
+
+    public void healPlayer()
+    {
+        if(health + rationHeal > maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += rationHeal;
+        }
     }
 }

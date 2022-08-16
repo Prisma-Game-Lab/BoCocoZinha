@@ -197,6 +197,7 @@ MonoBehaviour:
   hurtbox: {fileID: 1862722827267760370}
   stats: {fileID: 8802042020424164534}
   collisionDamage: 2
+  laserDamage: 10
 --- !u!114 &8802042020424164534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +216,7 @@ MonoBehaviour:
   speed: 6
   invincible: 0
   invincibilityDuration: 3
+  rationHeal: 10
   DeathPanel: {fileID: 0}
   inCyclone: 0
   camAnchor: {fileID: 3390341914616138186, guid: 79911fa5c62a80f4d9aec87fb2b75524, type: 3}

@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 public class PlayerInventory : MonoBehaviour
 {
     public Inventory inventory;
+    private GameObject player;
+
+    private void Update() 
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+    }
 
     public void AddToInventory(Item item)
     {
@@ -73,6 +82,7 @@ public class PlayerInventory : MonoBehaviour
         if(item == "Ration")
         {
             inventory.rationCount--;
+            player.GetComponent<PlayerStats>().healPlayer();
         }
         else
         {
