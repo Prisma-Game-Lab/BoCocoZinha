@@ -16,11 +16,11 @@ MonoBehaviour:
   cornCount: 0
   carrotCount: 0
   beetCount: 0
-  brocolliCount: 54
+  brocolliCount: 0
   wheatCount: 0
   supCount: 0
   pumpkinCount: 0
   bananaCount: 0
-  cakeCount: 4
-  rationCount: 2
-  seboCount: 1
+  cakeCount: 0
+  rationCount: 0
+  seboCount: 0
