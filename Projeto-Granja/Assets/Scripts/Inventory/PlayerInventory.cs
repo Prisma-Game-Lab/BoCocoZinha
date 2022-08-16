@@ -60,6 +60,7 @@ public class PlayerInventory : MonoBehaviour
             inventory.wheatCount--;
             inventory.strawberryCount--;
             inventory.cakeCount++;
+            SceneManager.LoadScene("End");
         }
         else if (recipe=="Ration")
         {

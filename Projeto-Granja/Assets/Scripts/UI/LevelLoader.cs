@@ -22,17 +22,24 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator LoadLevelAsync()
     {
         //FindObjectOfType<AudioManager>().StopAllSounds();
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-
-        loadingScreen.transform.GetChild(0).gameObject.SetActive(true);
-
-        slider = loadingScreen?.transform.GetChild(0).GetChild(0).GetComponent<Slider>();
-
-        while (!operation.isDone)
+        if(SceneManager.GetActiveScene().buildIndex != 6)
         {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            slider.value = progress;
-            yield return null;
+            AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+
+            loadingScreen.transform.GetChild(0).gameObject.SetActive(true);
+
+            slider = loadingScreen?.transform.GetChild(0).GetChild(0).GetComponent<Slider>();
+
+            while (!operation.isDone)
+            {
+                float progress = Mathf.Clamp01(operation.progress / 0.9f);
+                slider.value = progress;
+                yield return null;
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

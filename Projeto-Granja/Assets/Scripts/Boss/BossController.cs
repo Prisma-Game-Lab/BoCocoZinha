@@ -9,18 +9,19 @@ public class BossController : MonoBehaviour
     [SerializeField] private float laserDuration;
     [SerializeField] private float laserAnticipation;
 
-    private bool canAttack;
+    public bool canAttack;
 
     [SerializeField] private BossCyclone bossCyclone;
     [SerializeField] private BossGroundPound bossGroundPound;
     [SerializeField] private LaserController laserController;
+    [SerializeField] private GameObject portal;
     
     // Start is called before the first frame update
     void Start()
     {
         canAttack = false;
 
-        StartCoroutine(AttackCooldown());
+        //StartCoroutine(AttackCooldown());
     }
 
     // Update is called once per frame
@@ -66,6 +67,7 @@ public class BossController : MonoBehaviour
         if (bossHP <= 0)
         {
             GetComponent<ItemDrop>().DropItem();
+            portal.SetActive(true);
             Destroy(gameObject);
         }
     }
