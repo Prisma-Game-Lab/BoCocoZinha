@@ -88,8 +88,7 @@ public class PlayerStats : MonoBehaviour
             audioManager.Play("player_dead");
             Destroy(this.gameObject);
             //DeathPanel.SetActive(true);
-            slider.value = 0;
-            Time.timeScale = 0;
+            SceneManager.LoadScene("Grange");
         } 
         else
         {
