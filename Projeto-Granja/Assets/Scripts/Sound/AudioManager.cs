@@ -69,6 +69,24 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
+	public void PlayForSeconds(string sound, float time)
+	{
+		Sound s = GetSound(sound);
+		if (s != null)
+		{
+			s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+            s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+			StartCoroutine(PlayForSecondsCoroutine(s, time));
+		}
+    }
+
+	IEnumerator PlayForSecondsCoroutine(Sound sound, float time)
+	{
+		sound.source.Play();
+		yield return new WaitForSeconds(time);
+		sound.source.Stop();
+	}
+
 	//Play one of the sounds randonly
 	public void playMultipleRandomSounds(string[] sounds)
 	{

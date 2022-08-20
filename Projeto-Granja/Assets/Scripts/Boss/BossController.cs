@@ -66,9 +66,12 @@ public class BossController : MonoBehaviour
 
         if (bossHP <= 0)
         {
+            AudioManager.instance.Play("boss_dead");
             GetComponent<ItemDrop>().DropItem();
             portal.SetActive(true);
             Destroy(gameObject);
         }
+        else
+            AudioManager.instance.Play("boss_damage");
     }
 }

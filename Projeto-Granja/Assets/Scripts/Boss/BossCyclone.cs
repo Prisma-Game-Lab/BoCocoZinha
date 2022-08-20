@@ -53,6 +53,7 @@ public class BossCyclone : MonoBehaviour
         damageArea.SetActive(true);
         animator.SetInteger("Cyclone", 1);
         isActive = true;
+        AudioManager.instance.PlayDynamicSound("boss_cycle_start", "boss_cycle_middle", "boss_cycle_end", duration);
 
         yield return new WaitForSeconds(duration);
 
@@ -70,6 +71,7 @@ public class BossCyclone : MonoBehaviour
 
     private void DealDamage()
     {
+        AudioManager.instance.Play("player_hit");
         player.GetComponent<PlayerStats>().health -= damage;
     }
 

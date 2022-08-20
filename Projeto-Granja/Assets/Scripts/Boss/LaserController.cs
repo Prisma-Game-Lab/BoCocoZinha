@@ -84,12 +84,13 @@ public class LaserController : MonoBehaviour
         animator.SetInteger("Laser", 1);
         
         yield return new WaitForSeconds(anticipation * 0.9f);
-        
+
         Line.widthCurve = TransitionCurve;
         Line.colorGradient = TransitionColor;
         
         yield return new WaitForSeconds(anticipation * 0.1f);
-        
+
+        AudioManager.instance.PlayForSeconds("boss_laser", duration);
         Line.widthCurve = LaserCurve;
         Line.colorGradient = LaserColor;
         ImpactParticles.Play();

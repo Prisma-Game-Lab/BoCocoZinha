@@ -49,6 +49,7 @@ public class BossGroundPound : MonoBehaviour
         isActive = true;
         damageArea.SetActive(true);
         animator.SetInteger("Pound", 1);
+        AudioManager.instance.Play("boss_stomp");
 
         yield return new WaitForSeconds(duration);
 
@@ -61,6 +62,7 @@ public class BossGroundPound : MonoBehaviour
 
     private void DealDamage()
     {
+        AudioManager.instance.Play("player_hit");
         player.GetComponent<PlayerStats>().health -= damage;
     }
 

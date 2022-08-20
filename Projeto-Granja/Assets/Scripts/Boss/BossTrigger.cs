@@ -10,6 +10,7 @@ public class BossTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            AudioManager.instance.Play("boss_scream");
             StartCoroutine(boss.GetComponent<BossController>().AttackCooldown());
         }    
     }
