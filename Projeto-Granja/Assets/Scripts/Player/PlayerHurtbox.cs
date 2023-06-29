@@ -17,29 +17,27 @@ public class PlayerHurtbox : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyAttack"))
         {
             if (stats.invincible == false && playerMovement.isDashing == false)
             {
-                audioManager.Play("player_hit");
-                stats.health -= collisionDamage;
-                stats.invincible = true;
+                stats.Hit(collisionDamage);
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("EnemyAttack"))
+        if (other.gameObject.CompareTag("EnemyAttack"))
         {
             if (stats.invincible == false && playerMovement.isDashing == false)
             {
-                audioManager.Play("player_hit");
-                stats.health -= laserDamage;
-                stats.invincible = true;
+                Debug.Log($"{other.gameObject.name}",other.gameObject);
+                stats.Hit(laserDamage);
+
             }
-        }    
+        }
     }
 }

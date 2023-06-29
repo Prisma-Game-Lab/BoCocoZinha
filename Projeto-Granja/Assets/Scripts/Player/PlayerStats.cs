@@ -60,6 +60,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (!invincible)
         {
+            Debug.Log($"tomei dano!");
             audioManager.Play("player_hit");
             health -= damage;
             invincible = true;

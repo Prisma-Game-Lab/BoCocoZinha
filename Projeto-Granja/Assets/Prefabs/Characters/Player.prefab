@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtbox: {fileID: 1862722827267760370}
   stats: {fileID: 8802042020424164534}
-  collisionDamage: 2
+  collisionDamage: 4
   laserDamage: 10
 --- !u!114 &8802042020424164534
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   defense: 0
   speed: 6
   invincible: 0
-  invincibilityDuration: 3
+  invincibilityDuration: 1.5
   rationHeal: 10
   DeathPanel: {fileID: 0}
   inCyclone: 0

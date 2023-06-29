@@ -18,7 +18,7 @@ public class BossGroundPound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        col = damageArea.gameObject.GetComponent<CircleCollider2D>();    
+        col = damageArea.gameObject.GetComponent<CircleCollider2D>();
         minRadius = col.radius;
         isActive = false;
         bc = GetComponent<BossController>();
@@ -28,12 +28,12 @@ public class BossGroundPound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        if(isActive)
+        if (isActive)
         {
             col.radius += increase * Time.deltaTime;
         }
@@ -62,15 +62,14 @@ public class BossGroundPound : MonoBehaviour
 
     private void DealDamage()
     {
-        AudioManager.instance.Play("player_hit");
-        player.GetComponent<PlayerStats>().health -= damage;
+        player.GetComponent<PlayerStats>().Hit(damage);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             DealDamage();
-        }    
+        }
     }
 }

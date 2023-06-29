@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 8
-  attack: 13
+  attack: 10
   defense: 0
   speed: 2
 --- !u!114 &6650769901132142358

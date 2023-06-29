@@ -13,7 +13,14 @@ public class LaserController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private BossController bc;
 
-    public bool LaserActive = false;
+    public bool _LaserActive = false;
+    public bool LaserActive {
+        get => _LaserActive;
+        set{
+            Target.gameObject.SetActive(value);
+            _LaserActive = value;
+        }
+    }
     private bool searching = true;
     private Vector3 finalPos;
 
