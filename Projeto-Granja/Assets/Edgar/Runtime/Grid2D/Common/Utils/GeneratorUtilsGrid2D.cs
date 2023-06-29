@@ -46,6 +46,7 @@ namespace Edgar.Unity
                 if (tilemapsHolder != null)
                 {
                     var grid = tilemapsHolder.GetComponent<Grid>();
+                   // grid.cellGap = new Vector3(-.1f,-.1f,0);
                     roomTemplateInstance.transform.position = grid.CellToLocal(position);
                 }
 
@@ -206,22 +207,22 @@ namespace Edgar.Unity
             // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             if (!Application.isPlaying && keepPrefabsInEditor)
             {
-                #if UNITY_EDITOR
-                var roomTemplateInstance = (GameObject) PrefabUtility.InstantiatePrefab(roomTemplatePrefab);
+#if UNITY_EDITOR
+                var roomTemplateInstance = (GameObject)PrefabUtility.InstantiatePrefab(roomTemplatePrefab);
 
                 if (unpackRootObject)
                 {
-                    #pragma warning disable CS0162 // Unreachable code detected
+#pragma warning disable CS0162 // Unreachable code detected
                     PrefabUtility.UnpackPrefabInstance(
                         roomTemplateInstance,
                         PrefabUnpackMode.OutermostRoot,
                         InteractionMode.AutomatedAction
                     );
-                    #pragma warning restore CS0162 // Unreachable code detected
+#pragma warning restore CS0162 // Unreachable code detected
                 }
 
                 return roomTemplateInstance;
-                #endif
+#endif
             }
 
             return Object.Instantiate(roomTemplatePrefab);

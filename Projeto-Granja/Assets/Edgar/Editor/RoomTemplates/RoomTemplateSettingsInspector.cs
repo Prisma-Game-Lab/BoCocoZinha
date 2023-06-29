@@ -175,7 +175,7 @@ namespace Edgar.Unity.Editor
 
                 var points = outline.GetPoints();
                 var grid = roomTemplate.GetComponentInChildren<Grid>();
-
+                //grid.cellGap = new Vector3(-.1f,-.1f,0);
                 for (int i = 0; i < points.Count; i++)
                 {
                     GridUtils.DrawRectangleOutline(grid, points[i].ToUnityIntVector3(), points[(i + 1) % points.Count].ToUnityIntVector3(), Color.yellow);

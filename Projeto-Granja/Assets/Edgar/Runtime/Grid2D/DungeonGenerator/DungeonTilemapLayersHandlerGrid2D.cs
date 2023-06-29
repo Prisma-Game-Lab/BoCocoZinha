@@ -11,8 +11,8 @@ namespace Edgar.Unity
         /// <param name="gameObject"></param>
         public void InitializeTilemaps(GameObject gameObject)
         {
-            gameObject.AddComponent<Grid>();
-
+            var grid = gameObject.AddComponent<Grid>();
+            grid.cellGap = new Vector3(-.01f,-.01f,0);
             var floorTilemapObject = CreateTilemapGameObject("Floor", gameObject, 0);
 
             var wallsTilemapObject = CreateTilemapGameObject("Walls", gameObject, 1);
