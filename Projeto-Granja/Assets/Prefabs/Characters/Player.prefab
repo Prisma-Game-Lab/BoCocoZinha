@@ -175,8 +175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9195488142f437246924e895785a09e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 759748650481535332}
+  ps: {fileID: 8802042020424164534}
   movX: 0
   movY: 0
+  animator: {fileID: 468043138844800554}
+  playerAttack: {fileID: 2511941399407810499}
   movementDeadzone: 0.1
   dashCooldownTimer: 0.4
   dashingSpeed: 20
@@ -252,7 +256,7 @@ MonoBehaviour:
   isCharging: 0
 --- !u!95 &468043138844800554
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -269,7 +273,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3631599215380421258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +376,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &8774737126758298489
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -388,7 +393,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4652300335683040698
 GameObject:
   m_ObjectHideFlags: 0

@@ -225,6 +225,7 @@ MonoBehaviour:
   player: {fileID: 0}
   knockback: 0
   followTreshold: 1.55
+  animator: {fileID: 4254023410303155719}
 --- !u!114 &2895163354527308934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,11 +257,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bff96e372385094eab2183e58de3893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 
   itemDropado:
   - {fileID: 4104763287188968207, guid: a86af1ea052533342bf7f15379f06cda, type: 3}
 --- !u!95 &4254023410303155719
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -277,4 +279,5 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

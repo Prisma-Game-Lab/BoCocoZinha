@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [HideInInspector]public bool attacking;
-    [HideInInspector]public bool isAttacking;
+    [HideInInspector] public bool attacking;
+    [HideInInspector] public bool isAttacking;
 
     private Rigidbody2D rb;
 
@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
     public bool knockback;
     public float followTreshold;
 
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -48,29 +48,25 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        if(animator == null)
+        if (!knockback)
         {
-            animator = GetComponent<Animator>();
-        }
-
-        if(!knockback)
-        {
-            if (attacking && player != null) 
+            if (attacking && player != null)
             {
                 ChasePlayer();
                 animator.SetBool("Walking", true);
-            } 
-            else if(!isAttacking)
+            }
+            else if (!isAttacking)
             {
                 PatrolMovement();
                 animator.SetBool("Walking", true);
             }
-        }else
+        }
+        else
             animator.SetBool("Walking", false);
     }
 
@@ -145,17 +141,17 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToPlayer < followTreshold || isAttacking)
         {
             movVector = new Vector2(0.0f, 0.0f);
-            if(!isAttacking)
+            if (!isAttacking)
             {
                 StartCoroutine(GetComponent<EnemyAttack>().Attack(stats.attack, player.transform.position));
             }
-        } 
+        }
         else
         {
             movVector = player.transform.position - this.transform.position;
         }
-        
-        rb.MovePosition(rb.position + movVector * stats.speed/1.5f * Time.fixedDeltaTime);
+
+        rb.MovePosition(rb.position + movVector * stats.speed / 1.5f * Time.fixedDeltaTime);
     }
     /*
     public void playEnemyStepSound()

@@ -5,17 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private PlayerStats ps;
+
     [SerializeField] private float movX;
     [SerializeField] private float movY;
     private Vector2 movVector;
     private int moveSpeed;
-    private Animator animator;
-    private PlayerAttack playerAttack;
+    [SerializeField] private Animator animator;
+    public PlayerAttack playerAttack;
 
-    [Header("Animação")] 
-    [Range(0,1)] public float movementDeadzone = 0.1f;
-    
+    [Header("Animação")]
+    [Range(0, 1)] public float movementDeadzone = 0.1f;
+
     [Header("Atributos Dash")]
     public float dashCooldownTimer;
     public float dashingSpeed;
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isDashing;
     private bool canDash;
     private Vector2 dashingDirection;
-    
+
     //Animator hashes
     private int animMoving = Animator.StringToHash("Moving");
     private int animDashing = Animator.StringToHash("Dashing");
@@ -34,14 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerAttack = GetComponent<PlayerAttack>();
-
-        animator = GetComponent<Animator>();
-
-        rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true;
-
-        moveSpeed = GetComponent<PlayerStats>().speed;
+        moveSpeed = 6;
 
         isDashing = false;
         canDash = true;
@@ -50,15 +45,15 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue mov)
     {
         if (isDashing) return;
-        
+
         movVector = mov.Get<Vector2>();
-        
+
         if (movVector.magnitude > movementDeadzone && !playerAttack.isCharging)
         {
             // cache movement input in separate axis
             movX = movVector.x;
             movY = movVector.y;
-            
+
             animator.SetBool(animMoving, true);
             animator.SetFloat(animHorizontal, movX);
             animator.SetFloat(animVertical, movY);
@@ -68,13 +63,13 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             // clear vector to prevent controller drift
-            movVector = Vector2.zero; 
-            animator.SetBool(animMoving,false);
+            movVector = Vector2.zero;
+            animator.SetBool(animMoving, false);
         }
     }
 
     void OnDash()
-    {  
+    {
         if (!isDashing && canDash && !playerAttack.isAttacking)
         {
             StartCoroutine(Dash());
@@ -83,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void playSteps()
     {
-        string[] sounds = { "step_1", "step_2"};
+        string[] sounds = { "step_1", "step_2" };
         AudioManager.instance.playMultipleRandomSounds(sounds);
     }
 
@@ -94,9 +89,9 @@ public class PlayerMovement : MonoBehaviour
         dashingDirection = new Vector2(movX, movY);
 
         AudioManager.instance.Play("player_dash");
-        animator.SetBool(animDashing,true);
-        
-        if(dashingDirection == Vector2.zero)
+        animator.SetBool(animDashing, true);
+
+        if (dashingDirection == Vector2.zero)
         {
             dashingDirection = new Vector2(transform.localScale.x, 0);
         }
@@ -107,8 +102,8 @@ public class PlayerMovement : MonoBehaviour
 
         isDashing = false;
         rb.velocity = Vector2.zero;
-        animator.SetBool(animDashing,false);
-        
+        animator.SetBool(animDashing, false);
+
         yield return new WaitForSeconds(dashCooldownTimer);
 
         canDash = true;
@@ -118,7 +113,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!playerAttack) return;
         if (isDashing || playerAttack.isAttacking || playerAttack.isCharging) return;
-        
+
         rb.MovePosition(rb.position + movVector * moveSpeed * Time.fixedDeltaTime);
+        rb.freezeRotation = true;
     }
 }
