@@ -246,7 +246,7 @@ MonoBehaviour:
   distance: 5
   knockBackTime: 0.25
   knockBackDistance: 3
-  attackPoint: {fileID: 2735921499390141732}
+  attackTransform: {fileID: 2735921499390141732}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8

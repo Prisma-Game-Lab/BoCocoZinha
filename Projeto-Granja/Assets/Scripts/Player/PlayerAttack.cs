@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public float knockBackTime;
     public float knockBackDistance;
 
-    public Transform attackPoint;
+    public Transform attackTransform;
     private Animator animatorAttackPoint;
     public LayerMask enemyLayer;
 
@@ -38,20 +38,29 @@ public class PlayerAttack : MonoBehaviour
         canNormalAttack = true;
         canChargedAttack = true;
         animator = GetComponent<Animator>();
-        animatorAttackPoint = attackPoint.GetComponent<Animator>();
+        animatorAttackPoint = attackTransform.GetComponent<Animator>();
     }
 
-    /// <summary>
-    /// Repositions the AttackPoint based on a given position
-    /// </summary>
-    /// <param name="position">New position of the AttackPoint</param>
+
+    Vector2 attackPosition;
     public void UpdateAttackPoint(Vector2 position)
     {
-        if (isAttacking) return;
-        attackPoint.localPosition = position.normalized * distance;
+        if(position.magnitude <= 0.01)
+        {
+            return;
+        }
+        attackPosition = position;
+        if (!isAttacking)
+        {
+            UpdateAttackTransform();
+        }
+    }
 
-        float rotation = Mathf.Atan2(position.y, position.x) * Mathf.Rad2Deg;
-        attackPoint.localRotation = Quaternion.Euler(0, 0, rotation);
+    public void UpdateAttackTransform()
+    {
+        attackTransform.localPosition = attackPosition.normalized * distance;
+        float rotation = Mathf.Atan2(attackPosition.y, attackPosition.x) * Mathf.Rad2Deg;
+        attackTransform.localRotation = Quaternion.Euler(0, 0, rotation);
     }
 
     public void OnNormalAttack()
@@ -89,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
         animator.SetTrigger(animAttack);
         animatorAttackPoint.SetTrigger(animAttack);
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackTransform.position, range, enemyLayer);
         isAttacking = true;
 
         if (isChargedAttack)
@@ -141,8 +150,8 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(attackTime);
-
         isAttacking = false;
+        UpdateAttackTransform();
     }
     private void Attack(int damage, bool isChargedAttack)
     {
@@ -199,12 +208,12 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
+        if (attackTransform == null)
         {
             return;
         }
 
-        Gizmos.DrawWireSphere(attackPoint.position, range);
+        Gizmos.DrawWireSphere(attackTransform.position, range);
     }
 
 }
