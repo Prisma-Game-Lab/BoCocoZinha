@@ -11,15 +11,15 @@ public class BossGroundPound : MonoBehaviour
     private GameObject player;
     private float minRadius;
     private bool isActive;
-    private CircleCollider2D collider;
+    private CircleCollider2D col;
     private BossController bc;
     private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider = damageArea.gameObject.GetComponent<CircleCollider2D>();    
-        minRadius = collider.radius;
+        col = damageArea.gameObject.GetComponent<CircleCollider2D>();    
+        minRadius = col.radius;
         isActive = false;
         bc = GetComponent<BossController>();
         animator = GetComponent<Animator>();
@@ -35,7 +35,7 @@ public class BossGroundPound : MonoBehaviour
 
         if(isActive)
         {
-            collider.radius += increase * Time.deltaTime;
+            col.radius += increase * Time.deltaTime;
         }
     }
 
@@ -53,7 +53,7 @@ public class BossGroundPound : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
-        collider.radius = minRadius;
+        col.radius = minRadius;
         damageArea.SetActive(false);
         isActive = false;
         animator.SetInteger("Pound", 0);

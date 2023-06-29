@@ -45,9 +45,12 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue mov)
     {
         if (isDashing) return;
+        if (mov == null) return;
 
         movVector = mov.Get<Vector2>();
+        if (movVector == null) return;
 
+        playerAttack.UpdateAttackPoint(movVector);
         if (movVector.magnitude > movementDeadzone && !playerAttack.isCharging)
         {
             // cache movement input in separate axis
@@ -58,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat(animHorizontal, movX);
             animator.SetFloat(animVertical, movY);
 
-            playerAttack.UpdateAttackPoint(movVector);
         }
         else
         {
