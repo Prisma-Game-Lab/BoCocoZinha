@@ -33,9 +33,8 @@ public class EnemyAttack : MonoBehaviour
 
             foreach (Collider2D player in hitPlayer)
             {
-                audioManager.Play("player_hit");
-                player.GetComponent<PlayerStats>().health -= damage;
-                player.GetComponent<PlayerStats>().invincible = true;
+                 player.GetComponent<PlayerStats>().Hit(damage);
+               
             }
         }
     }

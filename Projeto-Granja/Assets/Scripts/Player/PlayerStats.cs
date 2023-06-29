@@ -30,26 +30,40 @@ public class PlayerStats : MonoBehaviour
 
     private Slider slider;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         Time.timeScale = 1;
         invincible = false;
         invincibleTimer = -1;
         audioManager = GameObject.FindGameObjectWithTag("PersistentData").GetComponent<AudioManager>();
-        if(SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex != 2)
         {
             slider = GameObject.FindGameObjectWithTag("HPBar").GetComponent<Slider>();
             SetMaxValue(health);
         }
         maxHealth = health;
-        if(SceneManager.GetActiveScene().buildIndex == 3)
+        if (SceneManager.GetActiveScene().buildIndex == 3)
         {
-            HPManager.currentHP = maxHealth; 
+            HPManager.currentHP = maxHealth;
         }
         else
         {
             health = HPManager.currentHP;
+        }
+    }
+
+    public void Hit(int damage)
+    {
+        if (!invincible)
+        {
+            audioManager.Play("player_hit");
+            health -= damage;
+            invincible = true;
+
         }
     }
 
@@ -58,7 +72,7 @@ public class PlayerStats : MonoBehaviour
     {
         UpdateInvincible();
 
-        if(slider)
+        if (slider)
         {
             CheckHealth();
         }
@@ -69,6 +83,7 @@ public class PlayerStats : MonoBehaviour
         if (invincible && invincibleTimer == -1)
         {
             invincibleTimer = invincibilityDuration;
+            animator.SetBool("Invincible", true);
         }
         else if (invincible && invincibleTimer > 0)
         {
@@ -78,6 +93,8 @@ public class PlayerStats : MonoBehaviour
         {
             invincibleTimer = -1;
             invincible = false;
+            animator.SetBool("Invincible", false);
+
         }
     }
 
@@ -89,12 +106,12 @@ public class PlayerStats : MonoBehaviour
             Destroy(this.gameObject);
             //DeathPanel.SetActive(true);
             SceneManager.LoadScene("Grange");
-        } 
+        }
         else
         {
             slider.value = health;
         }
-        HPManager.currentHP = health; 
+        HPManager.currentHP = health;
     }
 
     public void Anchor(float x, float y)
@@ -117,7 +134,7 @@ public class PlayerStats : MonoBehaviour
 
     public void healPlayer()
     {
-        if(health + rationHeal > maxHealth)
+        if (health + rationHeal > maxHealth)
         {
             health = maxHealth;
         }
