@@ -21,20 +21,20 @@ public class FocusCamera : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameObject player = collision.gameObject;
-            if (player.transform.position.y > (posY))
-            {
-                Debug.Log("de baixo");
-                //player.GetComponent<PlayerStats>().currentRoomY += 13;
-                player.GetComponent<PlayerStats>().Anchor(posX, posY + 6.5f);
-            } else
-            {
-                Debug.Log("de cima");
-                //player.GetComponent<PlayerStats>().currentRoomY -= 13;
-                player.GetComponent<PlayerStats>().Anchor(posX, posY - 6.5f);
-            }
-        }
+        // if (collision.gameObject.CompareTag("Player"))
+        // {
+        //     GameObject player = collision.gameObject;
+        //     if (player.transform.position.y > (posY))
+        //     {
+        //         Debug.Log("de baixo");
+        //         //player.GetComponent<PlayerStats>().currentRoomY += 13;
+        //         player.GetComponent<PlayerStats>().Anchor(posX, posY + 6.5f);
+        //     } else
+        //     {
+        //         Debug.Log("de cima");
+        //         //player.GetComponent<PlayerStats>().currentRoomY -= 13;
+        //         player.GetComponent<PlayerStats>().Anchor(posX, posY - 6.5f);
+        //     }
+        // }
     }
 }

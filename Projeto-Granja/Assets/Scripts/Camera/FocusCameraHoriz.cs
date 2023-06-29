@@ -21,21 +21,21 @@ public class FocusCameraHoriz : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameObject player = collision.gameObject;
-            if (player.transform.position.x > (posX))
-            {
-                Debug.Log("da esquerda");
-                //centro do corredor ate centro da sala a esquerda
-                player.GetComponent<PlayerStats>().Anchor(posX + 9.5f, posY);
-            }
-            else
-            {
-                Debug.Log("da direita");
-                //centro do corredor ate centro da sala a esquerda
-                player.GetComponent<PlayerStats>().Anchor(posX - 9.5f, posY);
-            }
-        }
+        // if (collision.gameObject.CompareTag("Player"))
+        // {
+        //     GameObject player = collision.gameObject;
+        //     if (player.transform.position.x > (posX))
+        //     {
+        //         Debug.Log("da esquerda");
+        //         //centro do corredor ate centro da sala a esquerda
+        //         player.GetComponent<PlayerStats>().Anchor(posX + 9.5f, posY);
+        //     }
+        //     else
+        //     {
+        //         Debug.Log("da direita");
+        //         //centro do corredor ate centro da sala a esquerda
+        //         player.GetComponent<PlayerStats>().Anchor(posX - 9.5f, posY);
+        //     }
+        // }
     }
 }
