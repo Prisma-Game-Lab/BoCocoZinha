@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
     private bool canChargedAttack;
     private Animator animator;
     public ParticleSystem ps;
-    
+
     //Animator hashes
     private int animAttack = Animator.StringToHash("Attack");
     private int animMoving = Animator.StringToHash("Moving");
@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
     public bool isAttacking;
     public bool isCharging;
 
-    private void Start() 
+    private void Start()
     {
         canNormalAttack = true;
         canChargedAttack = true;
@@ -47,18 +47,18 @@ public class PlayerAttack : MonoBehaviour
     /// <param name="position">New position of the AttackPoint</param>
     public void UpdateAttackPoint(Vector2 position)
     {
-        if(isAttacking) return;
+        if (isAttacking) return;
         attackPoint.localPosition = position.normalized * distance;
-        
+
         float rotation = Mathf.Atan2(position.y, position.x) * Mathf.Rad2Deg;
-        attackPoint.localRotation = Quaternion.Euler(0,0,rotation);
+        attackPoint.localRotation = Quaternion.Euler(0, 0, rotation);
     }
 
-    public void OnNormalAttack() 
+    public void OnNormalAttack()
     {
-        if(canNormalAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
+        if (canNormalAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
-            Attack(normalDamage, false); 
+            Attack(normalDamage, false);
             StartCoroutine(NormalCooldown(normalCooldown));
         }
     }
@@ -75,24 +75,24 @@ public class PlayerAttack : MonoBehaviour
         ps.Stop();
     }
 
-    public void OnChargedAttack() 
+    public void OnChargedAttack()
     {
-        if(canChargedAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
+        if (canChargedAttack && !gameObject.GetComponent<PlayerMovement>().isDashing)
         {
             Attack(chargedDamage, true);
             StartCoroutine(ChargedCooldown(chargedCooldown));
         }
     }
 
-    private void Attack(int damage, bool isChargedAttack)
+    private IEnumerator AttackCoroutine(int damage, bool isChargedAttack)
     {
         animator.SetTrigger(animAttack);
         animatorAttackPoint.SetTrigger(animAttack);
-        
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
-        StartCoroutine(MovementStop());
 
-        if(isChargedAttack)
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, range, enemyLayer);
+        isAttacking = true;
+
+        if (isChargedAttack)
             AudioManager.instance.Play("swing_charged");
         else
         {
@@ -112,14 +112,14 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (!enemy.CompareTag("Enemy") && !enemy.CompareTag("Breakable") && !enemy.CompareTag("Boss")) return;
+            if (!enemy.CompareTag("Enemy") && !enemy.CompareTag("Breakable") && !enemy.CompareTag("Boss")) continue;
 
-            if(enemy.CompareTag("Enemy"))
+            if (enemy.CompareTag("Enemy"))
             {
                 StartCoroutine(KnockBack(enemy.gameObject));
                 enemy.GetComponent<EnemyStats>().TakeDamage(damage, isChargedAttack);
             }
-            else if(enemy.CompareTag("Boss"))
+            else if (enemy.CompareTag("Boss"))
             {
                 enemy.GetComponent<BossController>().TakeDamage(damage);
             }
@@ -133,29 +133,27 @@ public class PlayerAttack : MonoBehaviour
                     string[] sounds = { "box_breaking_1", "box_breaking_2", "box_breaking_3" };
                     AudioManager.instance.playMultipleRandomSounds(sounds);
                 }
-                else if(entity.entityType == "plant")
+                else if (entity.entityType == "plant")
                 {
-                    string[] sounds = { "gather_plants_1", "gather_plants_2"};
+                    string[] sounds = { "gather_plants_1", "gather_plants_2" };
                     AudioManager.instance.playMultipleRandomSounds(sounds);
                 }
             }
         }
-    }
-
-    private IEnumerator MovementStop()
-    {
-        isAttacking = true;
-
-        yield return new WaitForSeconds(attackTime); 
+        yield return new WaitForSeconds(attackTime);
 
         isAttacking = false;
+    }
+    private void Attack(int damage, bool isChargedAttack)
+    {
+        StartCoroutine(AttackCoroutine(damage, isChargedAttack));
     }
 
     private IEnumerator NormalCooldown(float cooldown)
     {
         canNormalAttack = false;
 
-        yield return new WaitForSeconds(cooldown); 
+        yield return new WaitForSeconds(cooldown);
 
         canNormalAttack = true;
     }
@@ -164,7 +162,7 @@ public class PlayerAttack : MonoBehaviour
     {
         canChargedAttack = false;
 
-        yield return new WaitForSeconds(cooldown); 
+        yield return new WaitForSeconds(cooldown);
 
         canChargedAttack = true;
     }
@@ -173,7 +171,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Rigidbody2D enemy_rb = enemy.GetComponent<Rigidbody2D>();
         if (enemy_rb == null) yield break;
-        
+
         enemy.GetComponent<EnemyMovement>().knockback = true;
         enemy_rb.isKinematic = false;
         Vector2 diff = enemy_rb.transform.position - transform.position;
@@ -199,9 +197,9 @@ public class PlayerAttack : MonoBehaviour
         ps.Stop();
     }
 
-    private void OnDrawGizmosSelected() 
+    private void OnDrawGizmosSelected()
     {
-        if(attackPoint == null)
+        if (attackPoint == null)
         {
             return;
         }
