@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -45,6 +43,8 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    Vector2 lastPosition;
+    int dir = 1;
     // Update is called once per frame
     void Update()
     {
@@ -65,9 +65,27 @@ public class EnemyMovement : MonoBehaviour
                 PatrolMovement();
                 animator.SetBool("Walking", true);
             }
+
         }
         else
             animator.SetBool("Walking", false);
+        if (lastPosition.x < this.transform.position.x && dir == 1)
+        {
+            dir = -1;
+            this.gameObject.transform.Rotate(Vector3.up, 180);
+        }
+        else if (lastPosition.x > this.transform.position.x && dir == -1)
+        {
+            dir = 1;
+            this.gameObject.transform.Rotate(Vector3.up, 180);
+        }
+
+
+
+
+        lastPosition = this.transform.position;
+
+
     }
 
 
@@ -83,6 +101,7 @@ public class EnemyMovement : MonoBehaviour
         {
             //Escolhe uma direcao aleatoria
             newDirection = Random.Range(0, 4);
+
             while ((newDirection == lastDirection) || (moved[newDirection] == movLimit))
             {
                 newDirection = Random.Range(0, 4);
@@ -92,12 +111,16 @@ public class EnemyMovement : MonoBehaviour
 
             moveTimer += Time.deltaTime;
             rb.MovePosition(rb.position + movVector * stats.speed * Time.fixedDeltaTime);
+
+
         }
         else
         {
             moveTimer += Time.deltaTime;
             rb.MovePosition(rb.position + movVector * stats.speed * Time.fixedDeltaTime);
         }
+
+
     }
 
     void CalculateVector()
@@ -124,12 +147,15 @@ public class EnemyMovement : MonoBehaviour
                 movVector = new Vector2(-1.0f, 0.0f);
                 moved[2]++;
                 moved[3]--;
+
                 break;
 
             case 3:
                 movVector = new Vector2(1.0f, 0.0f);
                 moved[3]++;
                 moved[2]--;
+
+
                 break;
         }
     }
@@ -137,7 +163,6 @@ public class EnemyMovement : MonoBehaviour
     void ChasePlayer()
     {
         float distanceToPlayer = Vector2.Distance(player.transform.position, this.transform.position);
-
         if (distanceToPlayer < followTreshold || isAttacking)
         {
             movVector = new Vector2(0.0f, 0.0f);
@@ -149,9 +174,14 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             movVector = player.transform.position - this.transform.position;
+
+
         }
 
         rb.MovePosition(rb.position + movVector * stats.speed / 1.5f * Time.fixedDeltaTime);
+
+
+
     }
     /*
     public void playEnemyStepSound()
