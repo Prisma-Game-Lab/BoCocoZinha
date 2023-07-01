@@ -15,10 +15,12 @@ public class BossController : MonoBehaviour
     [SerializeField] private BossGroundPound bossGroundPound;
     [SerializeField] private LaserController laserController;
     [SerializeField] private GameObject portal;
+    private Animator animator;
     
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         canAttack = false;
 
         //StartCoroutine(AttackCooldown());
@@ -62,6 +64,7 @@ public class BossController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("Flash");
         bossHP -= damage;
 
         if (bossHP <= 0)
