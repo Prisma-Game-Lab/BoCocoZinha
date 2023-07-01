@@ -24,7 +24,15 @@ public class LevelLoader : MonoBehaviour
         //FindObjectOfType<AudioManager>().StopAllSounds();
         if(SceneManager.GetActiveScene().buildIndex != 6)
         {
-            AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+             AsyncOperation operation;
+            if (SceneManager.GetActiveScene().buildIndex < 5)
+            {
+                operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                operation = SceneManager.LoadSceneAsync(2);
+            }
 
             loadingScreen.transform.GetChild(0).gameObject.SetActive(true);
 
