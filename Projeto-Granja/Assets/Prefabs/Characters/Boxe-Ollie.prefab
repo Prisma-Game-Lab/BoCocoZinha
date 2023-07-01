@@ -71,13 +71,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7735962570781959652}
   - component: {fileID: 1904207741916077753}
-  - component: {fileID: 6299428682929878720}
   - component: {fileID: 5011070610592977915}
   - component: {fileID: 1859986384433715524}
   - component: {fileID: 6650769901132142358}
   - component: {fileID: 2895163354527308934}
   - component: {fileID: 1093655319255700202}
   - component: {fileID: 4254023410303155719}
+  - component: {fileID: 4875317050301807333}
   m_Layer: 3
   m_Name: Boxe-Ollie
   m_TagString: Enemy
@@ -153,22 +153,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6299428682929878720
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4838281694477377664}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.2512905, y: -0.92784226}
-  serializedVersion: 2
-  m_Radius: 3.5
 --- !u!50 &5011070610592977915
 Rigidbody2D:
   serializedVersion: 4
@@ -245,6 +229,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  indicator: {fileID: 0}
 --- !u!114 &1093655319255700202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,3 +266,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &4875317050301807333
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838281694477377664}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06521511, y: -0.04347706}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.4, y: 6.4}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.573944, y: 2.9218602}
+  m_EdgeRadius: 0

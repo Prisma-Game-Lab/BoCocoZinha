@@ -11,20 +11,6 @@ public class EnemyStats : MonoBehaviour
     public int speed;
 
     //public Text hpEnemyText
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //hpEnemyText = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<Text>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //hpEnemyText.text = "Enemy Health: " + health.ToString();
-
-    }
-
     private void playEnemyDamageSound(bool isChargedAttack)
     {
         string[] sounds = { "enemy_damage_1", "enemy_damage_2" };
@@ -45,6 +31,7 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(int damage, bool isChargedAttack)
     {
         playEnemyDamageSound(isChargedAttack);
+        StartCoroutine(Flash());
         health -= damage;
 
         if (health <= 0)
@@ -53,5 +40,16 @@ public class EnemyStats : MonoBehaviour
             GetComponent<ItemDrop>().DropItem();
             Destroy(gameObject);
         }
+    }
+    IEnumerator Flash()
+    {
+        var anim = GetComponent<Animator>();
+        if(anim == null){
+            Debug.Log($"anim not found");
+            yield break;
+        }
+        anim.SetBool("Flashing", true);
+        yield return new WaitForSeconds(.5f);
+        anim.SetBool("Flashing", false);
     }
 }
