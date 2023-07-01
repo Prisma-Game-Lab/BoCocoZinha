@@ -28,6 +28,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject anchor;
     public CinemachineVirtualCamera _camera;
 
+    public bool isSpeedUp;
+
     private Slider slider;
 
     Animator animator;
@@ -143,5 +145,22 @@ public class PlayerStats : MonoBehaviour
         {
             health += rationHeal;
         }
+    }
+
+    public void speedUpPlayer()
+    {
+        if (!isSpeedUp)
+        {
+            isSpeedUp = true;
+            var mov = GetComponent<PlayerMovement>();
+            mov.moveSpeed = mov.moveSpeed*2f;
+            StartCoroutine(EndSpeedup(mov));
+        }
+    }
+    IEnumerator EndSpeedup(PlayerMovement mov)
+    {
+        yield return new WaitForSeconds(40f);
+        isSpeedUp=false;
+        mov.moveSpeed/=2f;
     }
 }

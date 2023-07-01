@@ -88,7 +88,7 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             inventory.seboCount--;
-            SceneManager.LoadScene(2);
+            player.GetComponent<PlayerStats>().speedUpPlayer();
         }
     }
 }

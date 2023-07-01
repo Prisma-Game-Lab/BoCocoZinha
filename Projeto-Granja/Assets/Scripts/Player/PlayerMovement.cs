@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movX;
     [SerializeField] private float movY;
     private Vector2 movVector;
-    private int moveSpeed;
+    public float moveSpeed;
     [SerializeField] private Animator animator;
     public PlayerAttack playerAttack;
 
