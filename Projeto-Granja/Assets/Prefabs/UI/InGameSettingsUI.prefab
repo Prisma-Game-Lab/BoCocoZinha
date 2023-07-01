@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2632067712909490382, guid: a17f52ecf2f72f740b898530376aab99, type: 3}
+      propertyPath: scene
+      value: Grange
+      objectReference: {fileID: 0}
     - target: {fileID: 3536575577391136451, guid: a17f52ecf2f72f740b898530376aab99, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

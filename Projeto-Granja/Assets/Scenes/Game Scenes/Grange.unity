@@ -7419,6 +7419,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 671260218274225738, guid: 4397f3fa6a3d4754894132693981bd8a, type: 3}
+      propertyPath: scene
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 2072290242791004231, guid: 4397f3fa6a3d4754894132693981bd8a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
